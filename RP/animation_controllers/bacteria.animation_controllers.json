@@ -1,0 +1,74 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.bacteria": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"walking": "query.ground_speed"
+						},
+						{
+							"move_to_target": "query.has_target"
+						},
+						{
+							"attack": "variable.has_target && variable.attack_time >= 0.1"
+						}
+					]
+				},
+				"walking": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"idle": "!query.ground_speed"
+						},
+						{
+							"move_to_target": "query.has_target"
+						},
+						{
+							"attack": "variable.has_target && variable.attack_time >= 0.1"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"idle": "variable.attack_time <= 0.0"
+						},
+						{
+							"move_to_target": "query.has_target"
+						},
+						{
+							"walking": "query.ground_speed"
+						}
+					]
+				},
+                "move_to_target": {
+					"animations": [
+						"move_to_target"
+					],
+					"transitions": [
+						{
+							"idle": "!query.ground_speed && !query.has_target"
+						},
+						{
+							"attack": "variable.has_target && variable.attack_time >= 0.1"
+						},
+						{
+							"walking": "query.ground_speed"
+						}
+					]
+				}
+			}
+		}
+	}
+}
