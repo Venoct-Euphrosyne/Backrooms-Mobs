@@ -1,1 +1,33 @@
-
+{
+    "format_version": 2,
+    "header": {
+        "description": "Backrooms Mobs",
+        "name": "Backrooms Mobs Behavior Pack",
+        "uuid": "2a96be1a-25c5-4c19-9fe6-d08108c5eb31",
+        "version": [
+            0,
+            0,
+            1
+        ],
+        "min_engine_version": [
+            1,
+            21,
+            50
+        ]
+    },
+    "modules": [
+        {
+            "description": "Backrooms Mobs",
+            "type": "data",
+            "uuid": "d224696a-5b4e-41e9-bfae-289cf0d812da",
+            "version": [
+                0,
+                0,
+                1
+            ]
+        }
+    ],
+    "metadata": {
+        "authors": "Peithonic"
+    }
+}
