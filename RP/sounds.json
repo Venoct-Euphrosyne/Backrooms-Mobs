@@ -1,0 +1,20 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "ve:bacteria": {
+               "events" : {
+               "ambient" : "mob.bacteria.say",
+               "death" : "mob.bacteria.hurt",
+               "hurt" : "mob.bacteria.hurt",
+               "step" : {
+                  "pitch" : [ 0.90, 1.10 ],
+                  "sound" : "mob.zombie.step",
+                  "volume" : 0.650
+                }
+              },
+              "pitch": [0.8, 1.2],
+              "volume": 1
+            }
+          }
+        }
+    }
