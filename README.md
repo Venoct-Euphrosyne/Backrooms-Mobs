@@ -9,5 +9,8 @@ PSA that when downloading multiple copies to edit, the uuids of both manifests m
 Current Mobs:
 Bacteria (sounds in development), 
 Smiler (in development).
+
+If there is a single issue with ANY mob please contact me.
+
 License located in the Backrooms-Mobs section is for all software.
 Both Licenses located in the BP and RP sections target only the pack_icon.png
