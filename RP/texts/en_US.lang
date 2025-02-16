@@ -1,2 +1,5 @@
 entity.ve:bacteria.name=Bacteria
 item.spawn_egg.entity.ve:bacteria.name=Bacteria Spawn Egg
+
+entity.ve:smiler.name=Smiler
+item.spawn_egg.entity.ve:smiler.name=Smiler Spawn Egg
