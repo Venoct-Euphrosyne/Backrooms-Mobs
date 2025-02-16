@@ -5,6 +5,7 @@ If I can't match the behavior I try to make it similar. If you have any suggesti
 On top of the initial license, I would appreciate if I was notified before the redistribution of the content, however you are not obliged to.
 Contact info: peithonic@gmail.com
 PSA that when downloading multiple copies to edit, the uuids of both manifests must be changed before trying to test/import.
+Sound effects are typically taken from voicemod.net textures/models are inspiration from images. 
 
 Current Mobs:
 Bacteria (sounds in development), 
