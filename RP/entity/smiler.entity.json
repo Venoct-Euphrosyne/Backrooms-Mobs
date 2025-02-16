@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:smiler",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/smiler"
+			},
+			"geometry": {
+				"default": "geometry.smiler"
+			},
+			"scripts": {
+        "animate": [
+          "controller_look_at_target",
+          "controller"
+        ]
+      },
+      "animations": {
+        "idle": "animation.smiler.idle",
+		"controller": "controller.animation.smiler"
+      },
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#ffa7a7",
+				"overlay_color": "#ffffff"
+			}
+		}
+	}
+}
