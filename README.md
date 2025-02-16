@@ -6,5 +6,8 @@ On top of the initial license, I would appreciate if I was notified before the r
 Contact info: peithonic@gmail.com
 PSA that when downloading multiple copies to edit, the uuids of both manifests must be changed before trying to test/import.
 
+Current Mobs:
+Bacteria (sounds in development), 
+Smiler (in development).
 License located in the Backrooms-Mobs section is for all software.
 Both Licenses located in the BP and RP sections target only the pack_icon.png
