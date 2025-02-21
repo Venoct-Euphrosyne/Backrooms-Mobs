@@ -3,3 +3,9 @@ item.spawn_egg.entity.ve:bacteria.name=Bacteria Spawn Egg
 
 entity.ve:smiler.name=Smiler
 item.spawn_egg.entity.ve:smiler.name=Smiler Spawn Egg
+
+entity.ve:humanoidf.name=Female Humanoid
+item.spawn_egg.entity.ve:humanoidf.name=F-Humanoid Spawn Egg
+
+entity.ve:humanoidm.name=Male Humanoid
+item.spawn_egg.entity.ve:humanoidm.name=M-Humanoid Spawn Egg
