@@ -1,0 +1,47 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "ve:humanoidf",
+        "min_engine_version": "1.8.0",
+        "materials": {
+          "default": "entity_emissive_alpha"
+        },
+        "textures": {
+          "white": "textures/entity/humanoidf/whitef",
+          "red": "textures/entity/humanoidf/redf",
+          "yellow": "textures/entity/humanoidf/yellowf",
+          "blue": "textures/entity/humanoidf/bluef",
+          "green": "textures/entity/humanoidf/greenf",
+          "turquoise": "textures/entity/humanoidf/turquoisef",
+          "orange": "textures/entity/humanoidf/orangef",
+          "gray": "textures/entity/humanoidf/grayf",
+          "purple": "textures/entity/humanoidf/purplef"
+        },
+        "geometry": {
+          "default": "geometry.humanoidf"
+        },
+        "scripts": {
+          "animate": [
+            "controller"
+          ]
+        },
+        "animations": {
+          "look_at_target_default": "animation.humanoid.look_at_target.default",
+          "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+          "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+          "walk": "animation.humanoidf.walk",
+          "attack": "animation.humanoidf.attack",
+          "idle": "animation.humanoidf.idle",
+          "controller": "controller.animation.humanoidf"
+        },
+        "render_controllers": [
+          "controller.render.humanoidf"
+        ],
+        "spawn_egg": {
+          "base_color": "#000000",
+          "overlay_color": "#ff00ff"
+        }
+      }
+    }
+  }
