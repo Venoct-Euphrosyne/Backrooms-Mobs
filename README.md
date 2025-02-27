@@ -9,6 +9,7 @@ Sound effects are typically taken from voicemod.net textures/models are inspirat
 
 Current Mobs:
 #?? Bacteria (sounds in development), 
+#5 Clump (Sounds in discussion),
 #3 Smiler (completed),
 #38 Humanoid (M & F, sounds in development).
 
