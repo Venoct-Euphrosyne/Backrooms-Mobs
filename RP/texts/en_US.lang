@@ -9,3 +9,6 @@ item.spawn_egg.entity.ve:humanoidf.name=F-Humanoid Spawn Egg
 
 entity.ve:humanoidm.name=Male Humanoid
 item.spawn_egg.entity.ve:humanoidm.name=M-Humanoid Spawn Egg
+
+entity.ve:clump.name=Clump
+item.spawn_egg.entity.ve:clump.name=Clump Spawn Egg
