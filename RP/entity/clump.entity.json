@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:clump",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/clump"
+			},
+			"geometry": {
+				"default": "geometry.clump"
+			},
+            "scripts": {
+                "animate": [
+                  "controller"
+                ]
+              },
+              "animations": {
+                "look_at_target_default": "animation.humanoid.look_at_target.default",
+                "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+                "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+                "walk": "animation.clump.walk",
+                "idle": "animation.clump.idle",
+                "controller": "controller.animation.clump"
+              },
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#cbd39c",
+				"overlay_color": "#ff4747"
+			}
+		}
+	}
+}
