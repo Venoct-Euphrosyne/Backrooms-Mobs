@@ -1,0 +1,15 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.humanoidf": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [ "Texture.white", "Texture.red", "Texture.yellow", "Texture.blue", "Texture.green", "Texture.turquoise", "Texture.orange", "Texture.gray", "Texture.purple" ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "array.skins[query.variant]" ]
+    }
+}
+}
