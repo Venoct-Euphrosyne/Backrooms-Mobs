@@ -8,9 +8,13 @@ PSA that when downloading multiple copies to edit, the uuids of both manifests m
 Sound effects are typically taken from voicemod.net textures/models are inspiration from images. 
 
 Current Mobs:
+
 #?? Bacteria (sounds in development), 
-#5 Clump (Sounds in discussion),
+
 #3 Smiler (completed),
+
+#5 Clump (Sounds in discussion),
+
 #38 Humanoid (M & F, sounds in development).
 
 If there is a single issue with ANY mob please contact me.
