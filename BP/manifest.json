@@ -27,6 +27,16 @@
             ]
         }
     ],
+    "dependencies": [
+		{
+			"uuid": "21d064b3-13fe-4a46-a382-64b98edb81b0",
+			"version": [0, 0, 1]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.15.0"
+		}
+	],
     "metadata": {
         "authors": "Peithonic"
     }
