@@ -13,9 +13,13 @@ Current Mobs:
 
 #3 Smiler (completed),
 
+#4 Deathmoth (sounds in discussion),
+
 #5 Clump (Sounds in discussion),
 
-#38 Humanoid (M & F, sounds in development).
+#38 Humanoid (M & F, sounds in development),
+
+#67 Partygoer (Sounds in discussion)
 
 If there is a single issue with ANY mob please contact me.
 
