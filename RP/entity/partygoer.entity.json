@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:partygoer",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+          "partygoerwhite": "textures/entity/partygoer/partygoerwhite",
+          "partygoerred": "textures/entity/partygoer/partygoerred",
+          "partygoeryellow": "textures/entity/partygoer/partygoeryellow",
+          "partygoerblue": "textures/entity/partygoer/partygoerblue",
+          "partygoergreen": "textures/entity/partygoer/partygoergreen"
+        },
+			"geometry": {
+				"default": "geometry.partygoer"
+			},
+			"spawn_egg": {
+				"base_color": "#d1ac86",
+				"overlay_color": "#7b1000"
+			},
+			"scripts": {
+				"animate": [
+            "move",
+			"attacks"
+          ]
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"idle": "animation.partygoer.idle",
+				"chase": "animation.partygoer.chase",
+				"attack": "animation.partygoer.attack",
+				"move": "controller.animation.partygoer.move",
+				"attacks": "controller.animation.partygoer.attack"
+			},
+			"render_controllers": ["controller.render.partygoer"],
+			"enable_attachables": true
+		}
+	}
+}
