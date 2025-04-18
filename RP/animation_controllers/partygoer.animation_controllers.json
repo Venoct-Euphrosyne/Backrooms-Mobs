@@ -1,0 +1,56 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.partygoer.move": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"chase": "query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"chase": {
+					"animations": [
+						"chase"
+					],
+					"transitions": [
+						{
+							"idle": "!query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				}
+		}
+	},
+		"controller.animation.partygoer.attack": {
+			"states": {
+				"chase": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time > 0"
+						}
+					]
+				},
+				"attack": 
+		        {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"chase": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.4
+				}
+	
+}
+}
+	}
+}
