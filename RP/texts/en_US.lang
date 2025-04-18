@@ -12,3 +12,10 @@ item.spawn_egg.entity.ve:humanoidm.name=M-Humanoid Spawn Egg
 
 entity.ve:clump.name=Clump
 item.spawn_egg.entity.ve:clump.name=Clump Spawn Egg
+
+entity.ve:deathmoth.name=Deathmoth
+item.spawn_egg.entity.ve:deathmoth.name=Deathmoth Spawn Egg
+
+entity.ve:partygoer.name=Partygoer
+item.spawn_egg.entity.ve:partygoer.name=Partygoer Spawn Egg
+
