@@ -10,7 +10,7 @@
 				},
 				"head": {
 					"rotation": ["query.target_x_rotation", "query.target_y_rotation", 0],
-					"position": ["-this", "math.cos(query.life_time * 343.774) * 1.6 - this", "-this"]
+					"position": ["-this", "-1+math.cos(query.life_time * 343.774) * 1.6 - this", "1-this"]
 				},
 				"leftWing": {
 					"rotation": [0, "math.cos(query.life_time * 1489.6) * -45.0", 0],
