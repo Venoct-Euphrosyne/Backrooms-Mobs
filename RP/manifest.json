@@ -2,7 +2,7 @@
     "format_version": 2,
     "header": {
         "description": "Backrooms Mobs",
-        "name": "Backrooms Mobs Behavior Pack",
+        "name": "Backrooms Mobs Resource Pack",
         "uuid": "21d064b3-13fe-4a46-a382-64b98edb81b0",
         "version": [
             0,
@@ -28,6 +28,6 @@
         }
     ],
     "metadata": {
-        "authors": "Peithonic"
+        "authors": ["Peithonic"]
     }
 }
