@@ -119,8 +119,20 @@
           "must_see_forget_duration": 40.0,
           "entity_types": [
             {
-              "filters": { "test": "is_family", "subject": "other", "operator": "!=", "value": "none" },
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
               "max_dist": 12
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "partypooper"
+              },
+              "max_dist": 16
             }
           ]
         },
@@ -142,6 +154,10 @@
         },
         "minecraft:movement": {
           "value": 0.3
+        },
+        "minecraft:behavior.delayed_attack": {
+          "attack_duration": 0.75,
+          "hit_delay_pct": 0.613
         }
     },
 	"events": {
