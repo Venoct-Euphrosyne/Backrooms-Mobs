@@ -93,12 +93,66 @@
 "ve:transformed": {
 	"minecraft:movement": {
           "value": 0.4
-        }
+        },
+		"minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "within_radius": 12.0,
+          "must_see_forget_duration": 40.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 12
+            }
+          ]
+        },
+		"minecraft:behavior.move_towards_target": {
+          "priority": 1,
+          "speed_multiplier": 1
+        },
+		"minecraft:attack": {
+        "damage": 8
+      },
+	  "minecraft:behavior.melee_box_attack": {
+        "can_spread_on_fire": true,
+        "priority": 3
+      }
 },
 "ve:not_transformed": {
 	"minecraft:movement": {
           "value": 0.2
-        }
+        },
+		"minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "within_radius": 12.0,
+          "must_see_forget_duration": 40.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 12
+            }
+          ]
+        },
+		"minecraft:behavior.move_towards_target": {
+          "priority": 1,
+          "speed_multiplier": 1
+        },
+		"minecraft:attack": {
+        "damage": 8
+      },
+	  "minecraft:behavior.melee_box_attack": {
+        "can_spread_on_fire": true,
+        "priority": 3
+      }
 }
 		},
 		"components": {
