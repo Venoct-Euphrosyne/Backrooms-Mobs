@@ -63,7 +63,7 @@
             "minecraft:nameable": {
             },
             "minecraft:type_family": {
-              "family": [ "zombie", "undead", "monster", "mob" ]
+              "family": [ "backrooms", "clump", "monster", "mob" ]
             },
             "minecraft:behavior.float": {
                 "priority": 0
@@ -94,12 +94,6 @@
               "suffocate_time": 0,
               "breathes_air": true,
               "breathes_water": true
-            },
-            "minecraft:attack": {
-              "damage": 6
-            },
-            "minecraft:attack_cooldown": {
-              "attack_cooldown_time": 1
             },
             "minecraft:loot": {
               "table": "loot_tables/entities/clump.json"
@@ -207,6 +201,9 @@
               },
               "minecraft:movement": {
                 "value": 0.4
+              },
+              "minecraft:attack": {
+                "damage": 6
               }
           },
         "events": {
