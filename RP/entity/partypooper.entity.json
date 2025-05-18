@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:partypooper",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+				"default": "textures/entity/partypooper"
+			},
+			"geometry": {
+				"default": "geometry.partypooper"
+			},
+			"spawn_egg": {
+				"base_color": "#d1ac86",
+				"overlay_color": "#12007b"
+			},
+			"scripts": {
+				"animate": ["controller"]
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"idle": "animation.partypooper.idle",
+				"walk": "animation.partypooper.walk",
+				"controller": "controller.animation.partypooper"
+			},
+			"render_controllers": ["controller.render.default"],
+			"enable_attachables": true
+		}
+	}
+}

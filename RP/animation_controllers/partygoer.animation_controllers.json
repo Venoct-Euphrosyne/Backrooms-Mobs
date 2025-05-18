@@ -33,7 +33,7 @@
 				"chase": {
 					"transitions": [
 						{
-							"attack": "variable.attack_time > 0"
+							"attack": "query.is_delayed_attacking"
 						}
 					]
 				},

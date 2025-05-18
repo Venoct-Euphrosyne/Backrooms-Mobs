@@ -1,0 +1,45 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:skin_stealer",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+				"monster": "textures/entity/skin_stealer",
+    "one": "textures/entity/skin_stealer_disguises/1",
+    "two": "textures/entity/skin_stealer_disguises/2",
+    "three": "textures/entity/skin_stealer_disguises/3",
+    "four": "textures/entity/skin_stealer_disguises/4",
+    "five": "textures/entity/skin_stealer_disguises/5",
+    "six": "textures/entity/skin_stealer_disguises/6",
+    "seven": "textures/entity/skin_stealer_disguises/7",
+    "eight": "textures/entity/skin_stealer_disguises/8",
+    "nine": "textures/entity/skin_stealer_disguises/9"
+			},
+			"geometry": {
+				"default": "geometry.skin_stealer"
+			},
+			"spawn_egg": {
+				"base_color": "#6b0000",
+				"overlay_color": "#5c1818"
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"chase": "animation.skin_stealer.chase",
+				"walk": "animation.skin_stealer.walk",
+				"idle": "animation.skin_stealer.idle",
+				"move": "controller.animation.skin_stealer.move"
+			},
+			"scripts": {
+				"animate": [
+            "move"
+          ]
+			},
+			"render_controllers": ["controller.render.skin_stealer"],
+			"enable_attachables": true
+		}
+	}
+}

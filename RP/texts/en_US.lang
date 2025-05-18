@@ -19,3 +19,8 @@ item.spawn_egg.entity.ve:deathmoth.name=Deathmoth Spawn Egg
 entity.ve:partygoer.name=Partygoer
 item.spawn_egg.entity.ve:partygoer.name=Partygoer Spawn Egg
 
+entity.ve:partypooper.name=Partypooper
+item.spawn_egg.entity.ve:partypooper.name=Partypooper Spawn Egg
+
+entity.ve:skin_stealer.name=Skin Stealer
+item.spawn_egg.entity.ve:skin_stealer.name=Skin Stealer Spawn Egg

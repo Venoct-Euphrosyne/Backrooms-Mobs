@@ -1,0 +1,52 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {	
+		"controller.animation.skin_stealer.move": {
+			"initial_state": "idle",
+			"states": {
+                "idle": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+						{
+							"chase": "query.ground_speed < 0.9 && query.ground_speed > 0.5"
+						},
+                        {
+							"walk": "query.ground_speed < 0.5 && query.ground_speed > 0.0"
+						}
+					],
+					"blend_transition": 0.4
+                },
+				"walk": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"chase": "query.ground_speed < 0.9 && query.ground_speed > 0.5"
+						},
+                        {
+                            "idle": "!query.ground_speed"
+                        }
+					],
+					"blend_transition": 0.4
+				},
+				"chase": {
+					"animations": [
+						"chase"
+					],
+					"transitions": [
+						{
+							"walk": "query.ground_speed < 0.5 && query.ground_speed > 0.0"
+						},
+                        {
+                            "idle": "!query.ground_speed"
+                        }
+					],
+					"blend_transition": 0.4
+				}
+		}
+	}
+	}
+}

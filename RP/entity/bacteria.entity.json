@@ -15,8 +15,8 @@
       },
       "scripts": {
         "animate": [
-          "controller_look_at_target",
-          "controller"
+          "move",
+          "attacking"
         ]
       },
       "animations": {
@@ -26,7 +26,8 @@
         "walk": "animation.bacteria.walk",
         "attack": "animation.bacteria.attack",
         "idle": "animation.bacteria.idle",
-        "controller": "controller.animation.bacteria"
+        "move": "controller.animation.bacteria.move",
+        "attacking": "controller.animation.bacteria.attack"
       },
       "render_controllers": [
         "controller.render.default"
