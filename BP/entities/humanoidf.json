@@ -99,6 +99,10 @@
 				"value": 80,
 				"max": 80
 			},
+			"minecraft:behavior.delayed_attack": {
+          "attack_duration": 0.5,
+          "hit_delay_pct": 0.5
+        },
 			"minecraft:movement": {
 				"value": 0.22
 			},
@@ -121,6 +125,14 @@
 				"priority": 4,
 				"speed_multiplier": 1
 			},
+			 "minecraft:behavior.melee_box_attack": {
+        "can_spread_on_fire": true,
+        "priority": 3
+      },
+			"minecraft:behavior.move_towards_target": {
+          "priority": 1,
+          "speed_multiplier": 1
+        },
 			"minecraft:behavior.stomp_turtle_egg": {
 				"priority": 5,
 				"speed_multiplier": 1,
@@ -130,7 +142,7 @@
 				"interval": 20
 			},
 			"minecraft:behavior.random_stroll": {
-				"priority": 12,
+				"priority": 3,
 				"speed_multiplier": 1
 			},
 			"minecraft:behavior.look_at_player": {
@@ -217,7 +229,12 @@
 			}
               }
             ]
-          }
+          },
+		  {
+			"add": {
+					"component_groups": ["minecraft:pig_zombie_calm"]
+				}
+		  }
         ]
 			},
 			"minecraft:on_calm": {
