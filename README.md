@@ -9,17 +9,23 @@ Sound effects are typically taken from voicemod.net textures/models are inspirat
 
 Current Mobs:
 
-#?? Bacteria (sounds in development), 
+#?? Bacteria 
 
-#3 Smiler (completed),
+#3 Smiler 
 
-#4 Deathmoth (sounds in discussion),
+#4 Deathmoth - 1.0.1
 
-#5 Clump (Sounds in discussion),
+#5 Clump 
 
-#38 Humanoid (M & F, sounds in development),
+#10 Skin Stealer - 1.0.4
 
-#67 Partygoer (Sounds in discussion)
+#38 Humanoid (Male and Female, 2 entities)
+
+#67 Partygoer - 1.0.1
+
+#68 Partypooper - 1.0.4
+
+Sounds are in discussion for all mobs, but until I get a sound artist nothing will happen. 
 
 If there is a single issue with ANY mob please contact me.
 
