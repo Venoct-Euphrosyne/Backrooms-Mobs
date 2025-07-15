@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "orangem",
+		"metalness_emissive_roughness": "orangem_mer"
+	}
+}
