@@ -1,0 +1,42 @@
+entity.ve:bacteria.name=बैक्टीरिया
+item.spawn_egg.entity.ve:bacteria.name=बैक्टीरिया स्पॉन अंडा
+
+entity.ve:smiler.name=मुस्कुराने वाला
+item.spawn_egg.entity.ve:smiler.name=मुस्कुराने वाले का स्पॉन अंडा
+
+entity.ve:humanoidf.name=महिला मानवाकार
+item.spawn_egg.entity.ve:humanoidf.name=महिला मानवाकार का स्पॉन अंडा
+
+entity.ve:humanoidm.name=पुरुष मानवाकार
+item.spawn_egg.entity.ve:humanoidm.name=पुरुष मानवाकार का स्पॉन अंडा
+
+entity.ve:clump.name=गुच्छा
+item.spawn_egg.entity.ve:clump.name= गुच्छे का स्पॉन अंडा
+
+entity.ve:deathmoth.name=मौत की पतंगा
+item.spawn_egg.entity.ve:deathmoth.name=मौत की पतंगा का स्पॉन अंडा
+
+entity.ve:partygoer.name=पार्टी में शामिल होने वाला
+item.spawn_egg.entity.ve:partygoer.name=पार्टीगोअर का स्पॉन अंडा
+
+entity.ve:partypooper.name=पार्टीपूपर
+item.spawn_egg.entity.ve:partypooper.name=पार्टीपूपर का स्पॉन अंडा
+
+entity.ve:skin_stealer.name=स्किन स्टीलर 
+item.spawn_egg.entity.ve:skin_stealer.name=स्किन स्टीलर का स्पॉन अंडा
+
+entity.ve:dunk.name=डंक
+item.spawn_egg.entity.ve:dunk.name=डंक का स्पॉन अंडा
+
+entity.ve:strider.name=पड़ोस निगरानी दल, स्ट्राइडर
+item.spawn_egg.entity.ve:strider.name=पड़ोस निगरानी दल (स्ट्राइडर) को स्पॉन करें
+
+entity.ve:watcher.name=पड़ोस निगरानी दल, चौकीदार
+item.spawn_egg.entity.ve:watcher.name=पड़ोस निगरानी दल, चौकीदार को स्पॉन करें
+
+entity.ve:swimmer.name=पड़ोस निगरानी दल, तैराक
+item.spawn_egg.entity.ve:swimmer.name=पड़ोस निगरानी दल, तैराक को स्पॉन करें
+
+
+item.ve:balloon=गुब्बारा
+

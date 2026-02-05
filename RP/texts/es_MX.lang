@@ -1,0 +1,42 @@
+entity.ve:bacteria.name=Bacteria
+item.spawn_egg.entity.ve:bacteria.name=Bacteria Spawn Egg
+
+entity.ve:smiler.name=Sonriente
+item.spawn_egg.entity.ve:smiler.name=Huevo Generador de Sonriente
+
+entity.ve:humanoidf.name=Humanoide Femenino
+item.spawn_egg.entity.ve:humanoidf.name=Huevo Generador de Humanoide-F
+
+entity.ve:humanoidm.name=Humanoide Masculino
+item.spawn_egg.entity.ve:humanoidm.name=Huevo Generador de Humanoide-M
+
+entity.ve:clump.name=Bulto de Extremidades
+item.spawn_egg.entity.ve:clump.name=Huevo Generador de Bulto de Extremidades
+
+entity.ve:deathmoth.name=Polilla de la Muerte
+item.spawn_egg.entity.ve:deathmoth.name=Huevo Generador de Polilla de la Muerte
+
+entity.ve:partygoer.name=Fiestero
+item.spawn_egg.entity.ve:partygoer.name=Huevo Generador de Fiestero
+
+entity.ve:partypooper.name=Aguafiestas
+item.spawn_egg.entity.ve:partypooper.name=Huevo Generador de Aguafiestas
+
+entity.ve:skin_stealer.name=Robapieles
+item.spawn_egg.entity.ve:skin_stealer.name=Huevo Generador de Robapieles
+
+entity.ve:dunk.name=Trompudo
+item.spawn_egg.entity.ve:dunk.name=Huevo Generador de Trompudo
+
+entity.ve:strider.name=La Guardia del Vecindario - Caminante
+item.spawn_egg.entity.ve:strider.name=Huevo de Caminante
+
+entity.ve:watcher.name=La Guardia del Vecindario - El Vigilante
+item.spawn_egg.entity.ve:watcher.name=Huevo de El Vigilante
+
+entity.ve:swimmer.name=La Guardia del Vecindario - Nadador
+item.spawn_egg.entity.ve:swimmer.name=Huevo Generador de Nadador 
+
+
+item.ve:balloon=Globo
+

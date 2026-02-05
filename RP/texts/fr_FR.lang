@@ -1,0 +1,41 @@
+entity.ve:bacteria.name=Bactérie
+item.spawn_egg.entity.ve:bacteria.name=Oeuf d'apparition de bactérie
+
+entity.ve:smiler.name=Qui sourire
+item.spawn_egg.entity.ve:smiler.name=Oeuf d'apparition de qui sourire
+
+entity.ve:humanoidf.name=Humanoïde feminine
+item.spawn_egg.entity.ve:humanoidf.name=Oeuf d'apparition d'humanoïde feminine
+
+entity.ve:humanoidm.name=Humanoïde masculine
+item.spawn_egg.entity.ve:humanoidm.name=Oeuf d'apparition d'humanoïde masculine
+
+entity.ve:clump.name=Touffe
+item.spawn_egg.entity.ve:clump.name=Oeuf d'apparition de touffe
+
+entity.ve:deathmoth.name=Papillon de nuit de mort
+item.spawn_egg.entity.ve:deathmoth.name=Oeuf d'apparition de papillon de nuit de mort
+
+entity.ve:partygoer.name=Attendeur de fêtes
+item.spawn_egg.entity.ve:partygoer.name=Oeuf d'apparition d'attendeur de fêtes
+
+entity.ve:partypooper.name=Ruineur de fêtes
+item.spawn_egg.entity.ve:partypooper.name=Oeuf d'apparition de ruiner de fêtes
+
+entity.ve:skin_stealer.name=Voleur de peau
+item.spawn_egg.entity.ve:skin_stealer.name=Oeuf d'apparition de voleur de peau
+
+entity.ve:dunk.name=Dunk
+item.spawn_egg.entity.ve:dunk.name=Oeuf d'apparition de Dunk
+
+entity.ve:strider.name=Surveillance de quartier, arpenteur
+item.spawn_egg.entity.ve:strider.name=Faites apparaître la surveillance de quartier, arpenteur
+
+entity.ve:watcher.name=Surveillance de quartier, observateur
+item.spawn_egg.entity.ve:watcher.name=Faites apparaître la surveillance de quartier, observateur
+
+entity.ve:swimmer.name=Surveillance de quartier, nageur
+item.spawn_egg.entity.ve:swimmer.name=Faites apparaître la surveillance de quartier, nageur
+
+
+item.ve:balloon=Ballon

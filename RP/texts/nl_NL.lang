@@ -1,0 +1,42 @@
+entity.ve:bacteria.name=Bacteria
+item.spawn_egg.entity.ve:bacteria.name=Bacteriaspawnei
+
+entity.ve:smiler.name=Lacher
+item.spawn_egg.entity.ve:smiler.name=Lacherspawnei
+
+entity.ve:humanoidf.name=Vrouwelijke Mensachtige
+item.spawn_egg.entity.ve:humanoidf.name=V-Mensachtigespawnei
+
+entity.ve:humanoidm.name=Mannelijke Mensachtige
+item.spawn_egg.entity.ve:humanoidm.name=M-Mensachtigespawnei
+
+entity.ve:clump.name=Klomp
+item.spawn_egg.entity.ve:clump.name=Klompspawnei
+
+entity.ve:deathmoth.name=Doodsmot
+item.spawn_egg.entity.ve:deathmoth.name=Doodsmotspawnei
+
+entity.ve:partygoer.name=Feestganger
+item.spawn_egg.entity.ve:partygoer.name=Feestgangerspawnei
+
+entity.ve:partypooper.name=Feestverpester
+item.spawn_egg.entity.ve:partypooper.name=Feestverpesterspawnei
+
+entity.ve:skin_stealer.name=Huidsdief
+item.spawn_egg.entity.ve:skin_stealer.name=Huidsdiefspawnei
+
+entity.ve:dunk.name=Dunk
+item.spawn_egg.entity.ve:dunk.name=Dunkspawnei
+translator.comment.item.spawn_egg.entity.ve:dunk.name=I fucking love this thing
+
+entity.ve:strider.name=De Buurtswachter, Lavarijder
+item.spawn_egg.entity.ve:strider.name=Spawn De Buurtswachter, Lavarijder
+
+entity.ve:watcher.name=De Buurtswachter, Wachter
+item.spawn_egg.entity.ve:watcher.name=Spawn De Buurtswachter, Wachter
+
+entity.ve:swimmer.name=De Buurtswachter, Zwemmer
+item.spawn_egg.entity.ve:swimmer.name=Spawn De Buurtswachter, Zwemmer
+
+
+item.ve:balloon=Balloon
