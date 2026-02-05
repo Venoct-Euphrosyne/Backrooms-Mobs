@@ -19,11 +19,15 @@ Current Mobs:
 
 #10 Skin Stealer - 1.0.4
 
+#12 Dunk - 1.0.7
+
 #38 Humanoid (Male and Female, 2 entities)
 
 #67 Partygoer - 1.0.1
 
 #68 Partypooper - 1.0.4
+
+#96 The Neighborhood Watch, Strider, Watcher, and Swimmer - 1.0.7
 
 Sounds are in discussion for all mobs, but until I get a sound artist nothing will happen. 
 
