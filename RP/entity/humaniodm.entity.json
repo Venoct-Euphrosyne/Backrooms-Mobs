@@ -23,7 +23,7 @@
         },
         "scripts": {
           "animate": [
-            "controller"
+            "controller", "controller2"
           ]
         },
         "animations": {
@@ -33,7 +33,8 @@
           "walk": "animation.humanoidm.walk",
           "attack": "animation.humanoidm.attack",
           "idle": "animation.humanoidm.idle",
-          "controller": "controller.animation.humanoidm"
+          "controller": "controller.animation.humanoidm.move",
+          "controller2": "controller.animation.humanoidm.attack"
         },
         "render_controllers": [
           "controller.render.humanoidm"

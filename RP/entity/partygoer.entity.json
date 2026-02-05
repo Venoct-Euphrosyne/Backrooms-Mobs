@@ -24,13 +24,16 @@
 			"scripts": {
 				"animate": [
             "move",
-			"attacks"
+			"attacks",
+			{"idle_held": "query.is_item_equipped"}
           ]
 			},
 			"animations": {
 				"look_at_target_default": "animation.humanoid.look_at_target.default",
 				"idle": "animation.partygoer.idle",
 				"chase": "animation.partygoer.chase",
+				"idle_held": "animation.partygoer.idle_held",
+				"chase_held": "animation.partygoer.chase_held",
 				"attack": "animation.partygoer.attack",
 				"move": "controller.animation.partygoer.move",
 				"attacks": "controller.animation.partygoer.attack"

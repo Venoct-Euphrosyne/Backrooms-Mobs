@@ -79,12 +79,10 @@
 								"down": {"uv": [35, 28], "uv_size": [6, -6]}
 							}
 						}
-					]
-				},
-				{
-					"name": "bone4",
-					"parent": "bone3",
-					"pivot": [-5, 22, 0]
+					],
+					"locators": {
+						"locator": [-6, 13, 0]
+					}
 				},
 				{
 					"name": "leftarmteeth",
@@ -208,14 +206,14 @@
 				},
 				{
 					"name": "rightItem",
-					"parent": "bone",
-					"pivot": [-6, 15, 1]
+					"parent": "bone3",
+					"pivot": [-6.6, 18.75, -3],
+					"rotation": [42.5, 0, 0]
 				},
 				{
 					"name": "leftArm",
 					"parent": "bone",
 					"pivot": [5, 22, 0],
-					"mirror": true,
 					"cubes": [
 						{
 							"origin": [4, 14, -1.5],
@@ -253,11 +251,6 @@
 							}
 						}
 					]
-				},
-				{
-					"name": "bone6",
-					"parent": "bone5",
-					"pivot": [-5, 22, 0]
 				},
 				{
 					"name": "rightarmteeth",
@@ -754,9 +747,8 @@
 					"name": "leftLeg",
 					"parent": "body",
 					"pivot": [1.9, 12, 0],
-					"mirror": true,
 					"cubes": [
-						{"origin": [0.4, 0, -1.5], "size": [3, 12, 3], "uv": [0, 17]}
+						{"origin": [0.4, 0, -1.5], "size": [3, 12, 3], "uv": [0, 17], "mirror": true}
 					]
 				}
 			]

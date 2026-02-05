@@ -24,3 +24,19 @@ item.spawn_egg.entity.ve:partypooper.name=Partypooper Spawn Egg
 
 entity.ve:skin_stealer.name=Skin Stealer
 item.spawn_egg.entity.ve:skin_stealer.name=Skin Stealer Spawn Egg
+
+entity.ve:dunk.name=Dunk
+item.spawn_egg.entity.ve:dunk.name=Dunk Spawn Egg
+
+entity.ve:strider.name=The Neighborhood Watch, Strider
+item.spawn_egg.entity.ve:strider.name=Spawn The Neighborhood Watch, Strider
+
+entity.ve:watcher.name=The Neighborhood Watch, Watcher
+item.spawn_egg.entity.ve:watcher.name=Spawn The Neighborhood Watch, Watcher
+
+entity.ve:swimmer.name=The Neighborhood Watch, Swimmer
+item.spawn_egg.entity.ve:swimmer.name=Spawn The Neighborhood Watch, Swimmer
+
+
+item.ve:balloon=Balloon
+

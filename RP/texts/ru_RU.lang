@@ -1,0 +1,42 @@
+entity.ve:bacteria.name=Бактерия
+item.spawn_egg.entity.ve:bacteria.name=Яйцо призыва бактерии
+
+entity.ve:smiler.name=Улыбака
+item.spawn_egg.entity.ve:smiler.name=Яйцо призыва улыбаки
+
+entity.ve:humanoidf.name=Женский гуманоид
+item.spawn_egg.entity.ve:humanoidf.name=Яйцо призыва Ж-Гуманоида
+
+entity.ve:humanoidm.name=Мужской гуманоид
+item.spawn_egg.entity.ve:humanoidm.name=Яйцо призыва М-Гуманоида
+
+entity.ve:clump.name=Комок
+item.spawn_egg.entity.ve:clump.name=Яйцо призыва комка
+
+entity.ve:deathmoth.name=Смертельный мотылек
+item.spawn_egg.entity.ve:deathmoth.name=Яйцо призыва смертельного мотылька
+
+entity.ve:partygoer.name=Тусовщик
+item.spawn_egg.entity.ve:partygoer.name=Яйцо призыва тусовщика
+
+entity.ve:partypooper.name=Душнила
+item.spawn_egg.entity.ve:partypooper.name=Яйцо спавна душнилы
+
+entity.ve:skin_stealer.name=Похититель кожи
+item.spawn_egg.entity.ve:skin_stealer.name=Яйцо призыва похитителя кожа
+
+entity.ve:dunk.name=Данк
+item.spawn_egg.entity.ve:dunk.name=Яйцо призыва данка
+
+entity.ve:strider.name=Соседский дозор: Страйдер
+item.spawn_egg.entity.ve:strider.name=Призвать Соседский дозор: Страйдер
+
+entity.ve:watcher.name=Соседский дозор: Смотритель
+item.spawn_egg.entity.ve:watcher.name=Призвать Соседский дозор: Смотритель
+
+entity.ve:swimmer.name=Соседский дозор: Плавец
+item.spawn_egg.entity.ve:swimmer.name=Призвать Соседский дозор: Плавец
+
+
+item.ve:balloon=Воздушный шар
+

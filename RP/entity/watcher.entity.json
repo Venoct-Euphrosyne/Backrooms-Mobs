@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:watcher",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/watcher"
+			},
+			"geometry": {
+				"default": "geometry.watcher"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"look_at_target",
+					"general"
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.watcher.look_at_target",
+				"idle_float": "animation.watcher.idle_float",
+				"hover_no_target": "animation.watcher.hover_no_target",
+				"hover_on_target": "animation.watcher.hover_on_target",
+				"shriek": "animation.watcher.shriek",
+				"general": "controller.animation.watcher.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

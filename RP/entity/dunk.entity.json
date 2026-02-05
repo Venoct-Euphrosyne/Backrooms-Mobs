@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:dunk",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/dunk/dunk",
+				"snow": "textures/entity/dunk/snow_dunk",
+				"field": "textures/entity/dunk/field_dunk",
+				"stone": "textures/entity/dunk/stone_dunk",
+				"playhouse": "textures/entity/dunk/playhouse_dunk",
+				"beach": "textures/entity/dunk/beach_dunk",
+				"arcade": "textures/entity/dunk/arcade_dunk"
+			},
+			"geometry": {
+				"default": "geometry.dunk",
+				"snow": "geometry.snow_dunk",
+				"field": "geometry.field_dunk",
+				"stone": "geometry.stone_dunk",
+				"playhouse": "geometry.playhouse_dunk",
+				"beach": "geometry.beach_dunk",
+				"arcade": "geometry.arcade_dunk"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"idle_0": "animation.dunk.idle_0",
+				"idle_1": "animation.dunk.idle_1",
+				"sit": "animation.dunk.sit",
+				"sit_idle": "animation.dunk.sit_idle",
+				"blink": "animation.dunk.blink",
+				"walk": "animation.dunk.walk",
+				"slap": "animation.dunk.slap",
+				"general": "controller.animation.dunk.general"
+			},
+			"render_controllers": [
+				"controller.render.dunk"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

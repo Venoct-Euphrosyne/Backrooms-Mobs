@@ -1,0 +1,41 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tnwstrider": {
+      "part_visibility": [
+        {
+          "ihatethisleg": "query.is_delayed_attacking"
+        },
+        {
+          "hand_1_7": "query.is_delayed_attacking"
+        },
+        {
+          "leg_6_10": "query.is_delayed_attacking"
+        },
+        {
+          "leg_6_11": "query.is_delayed_attacking"
+        },
+        {
+          "leg_6_12": "query.is_delayed_attacking"
+        },
+        {
+          "leg_6_13": "query.is_delayed_attacking"
+        },
+        {
+          "leg_6_14": "query.is_delayed_attacking"
+        },
+        {
+          "leg_6_15": "query.is_delayed_attacking"
+        },
+        {
+          "leg_6_16": "query.is_delayed_attacking"
+        }
+      ],
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [
+                "Texture.default"
+            ]
+    }
+}
+}
