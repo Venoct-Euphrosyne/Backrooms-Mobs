@@ -1,43 +1,36 @@
 {
-    "format_version": 2,
-    "header": {
-        "description": "Backrooms Mobs",
-        "name": "Backrooms Mobs Behavior Pack",
-        "uuid": "2a96be1a-25c5-4c19-9fe6-d08108c5eb31",
-        "version": [
-            0,
-            0,
-            1
-        ],
-        "min_engine_version": [
-            1,
-            21,
-            50
-        ]
-    },
-    "modules": [
-        {
-            "description": "Backrooms Mobs",
-            "type": "data",
-            "uuid": "d224696a-5b4e-41e9-bfae-289cf0d812da",
-            "version": [
-                0,
-                0,
-                1
-            ]
-        }
-    ],
-    "dependencies": [
+	"format_version": 2,
+	"header": {
+		"description": "Backrooms Mobs BP 1.0.7 Mob Update 3",
+		"name": "Backrooms Mobs BP 1.0.7 Mob Update 3",
+		"uuid": "1276f0ab-01dc-424f-a0c4-01030f49359e",
+		"version": [0, 0, 7],
+		"min_engine_version": [1, 21, 50]
+	},
+	"modules": [
 		{
-			"uuid": "21d064b3-13fe-4a46-a382-64b98edb81b0",
-			"version": [0, 0, 1]
+			"description": "Backrooms Mobs BP 1.0.7 Mob Update 3",
+			"type": "data",
+			"uuid": "1f8c7473-97fa-435f-94a2-ee9e96a24787",
+			"version": [0, 0, 7]
+		},
+		{
+			"description": "script",
+			"type": "script",
+			"language": "javascript",
+			"uuid": "af61fbf8-a2f0-416d-ba75-df8ca221f277",
+			"version": [1, 0, 0],
+			"entry": "scripts/main.js"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "97112575-e81a-4897-b744-a3dab862a76e",
+			"version": [0, 0, 7]
 		},
 		{
 			"module_name": "@minecraft/server",
 			"version": "1.15.0"
 		}
-	],
-    "metadata": {
-        "authors": ["Peithonic"]
-    }
+	]
 }

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.0",
+	"format_version": "1.21.60",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "ve:smiler",
@@ -20,6 +20,14 @@
 				"has_gravity": true,
 				"has_collision": true
 			},
+        "minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		},
 			"minecraft:pushable": {
 				"is_pushable": false
 			},
@@ -30,8 +38,8 @@
         "table": "loot_tables/entities/smiler.json"
             },
 		"minecraft:collision_box": {
-			"width": 0.1,
-			"height": 0.2
+			"width": 0.6,
+			"height": 1.5
 		},
 		  "minecraft:health": {
 			"value": 100,
@@ -107,41 +115,6 @@
             "max_dist": 35
           }
         ]
-      },
-      "minecraft:damage_sensor": {
-        "triggers": [
-          {
-            "cause": "void",
-            "deals_damage": "no"
-          },
-          {
-            "on_damage": {
-              "filters": { "test": "is_family", "subject": "other", "value": "player" },
-              "event": "minecraft:damaged_by_player"
-            },
-            "cause": "all",
-            "deals_damage": "no_but_side_effects_apply"
-          },
-          {
-            "on_damage": {
-              "filters": { "test": "is_family", "subject": "other", "value": "mob" },
-              "event": "minecraft:damaged_by_entity"
-            },
-            "cause": "all",
-            "deals_damage": "no_but_side_effects_apply"
-          },
-          {
-            "on_damage": {
-              "event": "minecraft:damaged_by_entity"
-            },
-            "cause": "projectile",
-            "deals_damage": "no_but_side_effects_apply"
-          },
-          {
-            "cause": "all",
-            "deals_damage": "no_but_side_effects_apply"
-          }
-        ]
       }
 },
     "component_groups": {
@@ -163,40 +136,13 @@
           ]
         },
         "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "void",
-              "deals_damage": "no"
-            },
-            {
-              "on_damage": {
-                "filters": { "test": "is_family", "subject": "other", "value": "player" },
-                "event": "minecraft:damaged_by_player"
-              },
-              "cause": "all",
-              "deals_damage": "no_but_side_effects_apply"
-            },
-            {
-              "on_damage": {
-                "filters": { "test": "is_family", "subject": "other", "value": "mob" },
-                "event": "minecraft:damaged_by_entity"
-              },
-              "cause": "all",
-              "deals_damage": "no_but_side_effects_apply"
-            },
-            {
-              "on_damage": {
-                "event": "minecraft:damaged_by_entity"
-              },
-              "cause": "projectile",
-              "deals_damage": "no_but_side_effects_apply"
-            },
-            {
-              "cause": "all",
-              "deals_damage": "no_but_side_effects_apply"
-            }
-          ]
-        },
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		},
         "minecraft:behavior.look_at_player": {
         "priority": 4.0,
         "look_distance": 10.0,
@@ -216,40 +162,13 @@
           "avoid_damage_blocks": false
         },
         "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "void",
-              "deals_damage": "no"
-            },
-            {
-              "on_damage": {
-                "filters": { "test": "is_family", "subject": "other", "value": "player" },
-                "event": "minecraft:damaged_by_player"
-              },
-              "cause": "all",
-              "deals_damage": "no_but_side_effects_apply"
-            },
-            {
-              "on_damage": {
-                "filters": { "test": "is_family", "subject": "other", "value": "mob" },
-                "event": "minecraft:damaged_by_entity"
-              },
-              "cause": "all",
-              "deals_damage": "no_but_side_effects_apply"
-            },
-            {
-              "on_damage": {
-                "event": "minecraft:damaged_by_entity"
-              },
-              "cause": "projectile",
-              "deals_damage": "no_but_side_effects_apply"
-            },
-            {
-              "cause": "all",
-              "deals_damage": "no_but_side_effects_apply"
-            }
-          ]
-        },
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		},
         "minecraft:behavior.look_at_player": {
           "priority": 4.0,
         "look_distance": 10.0,
@@ -274,7 +193,15 @@
           "priority": 4.0,
         "look_distance": 10.0,
         "look_time": [0.001, 0.002]
-        }
+        },
+        "minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		}
       },
       "minecraft:immobile": {
         "minecraft:movement": {
@@ -291,7 +218,15 @@
           "priority": 1,
           "look_distance": 6,
           "look_time": [0.001, 0.002]
-        }
+        },
+        "minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		}
       },
       "minecraft:neutral": {
         "minecraft:looked_at": {
@@ -323,7 +258,15 @@
         "minecraft:behavior.random_stroll": {
           "priority": 7,
           "speed_multiplier": 0.3
-        }
+        },
+        "minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		}
       },
       "minecraft:hostile": {
         "minecraft:looked_at": {
@@ -356,13 +299,29 @@
               { "test": "has_equipment", "subject": "other", "domain": "head", "value": "carved_pumpkin" }
             ]
           }
-        }
+        },
+        "minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		}
       },
       "minecraft:hostile_unobserved": {
         "minecraft:behavior.melee_box_attack": {
           "priority": 2,
           "cooldown_time": 2.0
-        }
+        },
+        "minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"deals_damage": "no",
+							"cause": "all"
+						}
+					]
+		}
       }
     },
 
