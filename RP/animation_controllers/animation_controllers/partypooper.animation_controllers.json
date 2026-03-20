@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.partypooper": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"walk": "query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"walk": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"idle": "!query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				}
+		}
+	}
+}
+}

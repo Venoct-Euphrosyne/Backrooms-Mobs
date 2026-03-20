@@ -1,0 +1,65 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.watcher.general": {
+			"initial_state": "idle_floating",
+			"states": {
+				"idle_floating": {
+					"animations": [
+						"idle_float"
+					],
+					"transitions": [
+						{
+							"hovering_no_target": "query.ground_speed>1&&!query.has_target"
+						},
+						{
+							"hovering_on_target": "query.ground_speed>1&&query.has_target"
+						},
+						{
+							"shrieking": "query.has_target"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"hovering_no_target": {
+					"animations": [
+						"hover_no_target"
+					],
+					"transitions": [
+						{
+							"idle_floating": "query.ground_speed<0.5"
+						},
+						{
+							"shrieking": "query.has_target"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"hovering_on_target": {
+					"animations": [
+						"hover_on_target"
+					],
+					"transitions": [
+						{
+							"idle_floating": "query.ground_speed<0.5&&!query.has_target"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"shrieking": {
+					"animations": [
+						"shriek"
+					],
+					"transitions": [
+						{
+							"hovering_on_target": "query.ground_speed>1&&query.has_target&&query.all_animations_finished"
+						}
+					]
+				}
+			}
+		}
+	}
+}

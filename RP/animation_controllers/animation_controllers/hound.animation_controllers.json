@@ -1,0 +1,98 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.hound.move": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"run": "query.ground_speed && query.has_target"
+						},
+						{
+							"walk": "query.ground_speed>1 && !query.has_target"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"walk": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"run": "query.ground_speed && query.has_target"
+						},
+						{
+							"idle": "!query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"run": {
+					"animations": [
+						"run"
+					],
+					"transitions": [
+						{
+							"walk": "query.ground_speed>1 && !query.has_target"
+						},
+						{
+							"idle": "!query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				}
+			}
+		},
+		"controller.animation.hound.attack": {
+			"states": {
+				"walk": {
+					"transitions": [
+						{
+							"bite": "query.is_delayed_attacking&&query.variant==0&&!query.variant==1"
+						},
+						{
+							"swat": "query.is_delayed_attacking&&query.variant==1&&!query.variant==0"
+						}
+					]
+				},
+				"idle": {
+					"transitions": [
+						{
+							"bite": "query.is_delayed_attacking&&query.variant==0&&!query.variant==1"
+						},
+						{
+							"swat": "query.is_delayed_attacking&&query.variant==1&&!query.variant==0"
+						}
+					]
+				},
+				"bite": {
+					"animations": [
+						"bite"
+					],
+					"transitions": [
+						{
+							"walk": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"swat": {
+					"animations": [
+						"swat"
+					],
+					"transitions": [
+						{
+							"walk": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.4
+				}
+			}
+		}
+	}
+}

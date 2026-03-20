@@ -1,0 +1,63 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.humanoidm.move": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"walk": "query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"walk": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"idle": "!query.ground_speed"
+						}
+					],
+					"blend_transition": 0.4
+				}
+		}
+	},
+		"controller.animation.humanoidm.attack": {
+			"states": {
+				"walk": {
+					"transitions": [
+						{
+							"attack": "query.is_delayed_attacking"
+						}
+					]
+				},
+				"idle": {
+					"transitions": [
+						{
+							"attack": "query.is_delayed_attacking"
+						}
+					]
+				},
+				"attack": 
+		        {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"walk": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.4
+				}
+	
+}
+}
+	}
+}

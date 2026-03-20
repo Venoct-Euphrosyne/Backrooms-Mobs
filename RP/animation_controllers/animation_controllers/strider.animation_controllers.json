@@ -1,0 +1,66 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.strider.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"walking": "query.ground_speed>1"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"walking": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"idling": "query.ground_speed<0.5"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.strider.attack": {
+			"states": {
+				"walking": {
+					"transitions": [
+						{
+							"attack": "query.is_delayed_attacking"
+						}
+					]
+				},
+				"idling": {
+					"transitions": [
+						{
+							"attack": "query.is_delayed_attacking"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"walking": "query.all_animations_finished&&query.ground_speed>1"
+						},
+						{
+							"idling": "query.ground_speed<0.5&&query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.4
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,83 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.dunk.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"blink",
+						{
+							"idle_0": "variable.is_idling"
+						},
+						{
+							"idle_1": "variable.is_idling"
+						},
+						{
+							"walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"slapping": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"sit"
+					],
+					"transitions": [
+						{
+							"sit_idling": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sit_idling": {
+					"animations": [
+						"sit_idle",
+						"blink"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"slapping": {
+					"animations": [
+						"slap"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}
