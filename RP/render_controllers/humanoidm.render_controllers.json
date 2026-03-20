@@ -4,7 +4,7 @@
     "controller.render.humanoidm": {
       "arrays": {
         "textures": {
-          "Array.skins": [ "Texture.white", "Texture.red", "Texture.yellow", "Texture.blue", "Texture.green", "Texture.turquoise", "Texture.orange", "Texture.gray", "Texture.purple" ]
+          "Array.skins": [ "Texture.white", "Texture.red", "Texture.yellow", "Texture.blue", "Texture.green", "Texture.turquoise", "Texture.orange", "Texture.gray" ]
         }
       },
       "geometry": "Geometry.default",

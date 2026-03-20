@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.humanoidstatic": {
+			"geometry": "Geometry.default",
+			"arrays": {
+			"textures": {
+				"array.frames": [
+					"texture.frame_0",
+					"texture.frame_1",
+					"texture.frame_2",
+					"texture.frame_3",
+					"texture.frame_4",
+					"texture.frame_5",
+					"texture.frame_6"
+				]
+			}
+		},
+		"textures": ["array.frames  [math.mod(Math.floor(query.life_time * 15), 7)]"],
+			"materials": [
+				{
+					"*": "Material.default"	
+				}
+			]
+		}
+	}
+}
