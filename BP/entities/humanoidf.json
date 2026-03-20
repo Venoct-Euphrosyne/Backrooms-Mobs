@@ -48,7 +48,7 @@
 					"value": 7
 				}
 			},
-			"purple": {
+			"static": {
 				"minecraft:variant": {
 					"value": 8
 				}
@@ -224,7 +224,7 @@
 			  {
                 "weight": 9,
 				"add": { "component_groups": [
-                    "purple"
+                    "static"
 				]
 			}
               }

@@ -1,4 +1,4 @@
 import "dunk";
 import "deathmoth";
-import "dunk.name"
-
+import "dunk.name";
+import "./laserBeamAttack.js";

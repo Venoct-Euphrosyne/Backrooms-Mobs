@@ -1,18 +1,18 @@
 {
 	"format_version": 2,
 	"header": {
-		"description": "Backrooms Mobs BP 1.0.7 Mob Update 3",
-		"name": "Backrooms Mobs BP 1.0.7 Mob Update 3",
+		"description": "Backrooms Mobs BP 1.0.8 Mob Update 4 + Changes",
+		"name": "Backrooms Mobs BP 1.0.8 Mob Update 4 + Changes",
 		"uuid": "1276f0ab-01dc-424f-a0c4-01030f49359e",
-		"version": [0, 0, 7],
+		"version": [0, 0, 8],
 		"min_engine_version": [1, 21, 50]
 	},
 	"modules": [
 		{
-			"description": "Backrooms Mobs BP 1.0.7 Mob Update 3",
+			"description": "Backrooms Mobs BP 1.0.8 Mob Update 4 + Changes",
 			"type": "data",
 			"uuid": "1f8c7473-97fa-435f-94a2-ee9e96a24787",
-			"version": [0, 0, 7]
+			"version": [0, 0, 8]
 		},
 		{
 			"description": "script",
@@ -26,7 +26,7 @@
 	"dependencies": [
 		{
 			"uuid": "97112575-e81a-4897-b744-a3dab862a76e",
-			"version": [0, 0, 7]
+			"version": [0, 0, 8]
 		},
 		{
 			"module_name": "@minecraft/server",

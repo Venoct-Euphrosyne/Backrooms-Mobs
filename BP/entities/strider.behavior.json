@@ -69,6 +69,26 @@
 					"brstrider"
 				]
 			},
+			"minecraft:preferred_path": {
+  "max_fall_blocks": 1,
+  "jump_cost": 5,
+  "default_block_cost": 0,
+  "preferred_path_blocks": [
+    {
+      "cost": 5,
+      "blocks": [
+        "grass_block",
+		"stone"
+      ]
+    },
+	{
+      "cost": 0,
+      "blocks": [
+        "tuff"
+      ]
+    }
+  ]
+},
 			"minecraft:breathable": {
 				"total_supply": 15,
 				"suffocate_time": 0
@@ -87,7 +107,10 @@
 				"is_amphibious": true,
 				"can_pass_doors": true,
 				"can_walk": true,
-				"can_break_doors": true
+				"can_break_doors": true,
+				"blocks_to_avoid": [
+					"grass_block"
+				]
 			},
 			"minecraft:jump.static": {},
 			"minecraft:collision_box": {
@@ -100,13 +123,15 @@
 				}
 			},
 			"minecraft:behavior.melee_attack": {
-				"priority": 0,
+				"priority": 1,
 				"attack_once": false,
 				"track_target": true,
 				"reach_multiplier": 15
 			},
 			"minecraft:behavior.random_stroll": {
-				"priority": 3
+				"priority": 0,
+				"interval": 1,
+				"xz_dist": 50
 			},
 			"minecraft:behavior.look_at_player": {
 				"priority": 1,

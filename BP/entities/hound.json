@@ -1,0 +1,191 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "ve:hound",
+      "spawn_category": "monster",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "ve:bite": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:behavior.delayed_attack": {
+          "attack_duration": 0.7083,
+          "hit_delay_pct": 0.70
+        },
+        "minecraft:attack": {
+          "damage": 8
+        },
+        "minecraft:scale": {
+          "value": 0.7
+        },
+        "minecraft:ageable": {
+          "duration": 5,
+          "grow_up": {
+            "event": "minecraft:entity_spawned",
+            "target": "self"
+          }
+        }
+      },
+      "ve:swat": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:behavior.delayed_attack": {
+          "attack_duration": 0.7917,
+          "hit_delay_pct": 0.31
+        },
+        "minecraft:attack": {
+          "damage": 4
+        },
+        "minecraft:scale": {
+          "value": 0.7
+        },
+        "minecraft:ageable": {
+          "duration": 5,
+          "grow_up": {
+            "event": "minecraft:entity_spawned",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:collision_box": {
+        "width": 1.8,
+        "height": 1.7
+      },
+      "minecraft:movement": {
+          "value": 0.5
+        },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:health": {
+        "value": 40,
+        "max": 40
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": true
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/bacteria.json"
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "!=",
+              "value": "breeze"
+            }
+          }
+        ]
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "within_radius": 12.0,
+        "must_see_forget_duration": 40.0,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 12
+          }
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_walk": true,
+        "can_break_doors": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 12,
+        "speed_multiplier": 1
+      },
+      "minecraft:follow_range": {
+					"value": 20
+				}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "ve:bite"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "ve:swat"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "ve:swat"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "ve:bite"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
