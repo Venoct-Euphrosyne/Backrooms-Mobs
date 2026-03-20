@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "ve:bacteria",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "enderman"
+      },
+      "textures": {
+        "default": "textures/entity/bacteria"
+      },
+      "geometry": {
+        "default": "geometry.bacteria"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "attacking"
+        ]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "walk": "animation.bacteria.walk",
+        "attack": "animation.bacteria.attack",
+        "idle": "animation.bacteria.idle",
+        "move": "controller.animation.bacteria.move",
+        "attacking": "controller.animation.bacteria.attack"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#536a3b"
+      }
+    }
+  }
+}

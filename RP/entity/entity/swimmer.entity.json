@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:swimmer",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/swimmer"
+			},
+			"geometry": {
+				"default": "geometry.swimmer"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.swimmer.look_at_target",
+				"idle": "animation.swimmer.idle",
+				"crawl": "animation.swimmer.crawl",
+				"swim": "animation.swimmer.swim",
+				"stalk": "animation.swimmer.stalk",
+				"pounce": "animation.swimmer.pounce",
+				"general": "controller.animation.swimmer.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

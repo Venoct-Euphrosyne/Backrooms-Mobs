@@ -1,0 +1,57 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "ve:humanoidf",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "white": "textures/entity/humanoidf/whitef",
+        "red": "textures/entity/humanoidf/redf",
+        "yellow": "textures/entity/humanoidf/yellowf",
+        "blue": "textures/entity/humanoidf/bluef",
+        "green": "textures/entity/humanoidf/greenf",
+        "turquoise": "textures/entity/humanoidf/turquoisef",
+        "orange": "textures/entity/humanoidf/orangef",
+        "gray": "textures/entity/humanoidf/grayf",
+
+
+        "frame_0": "textures/entity/humanoidf/static/frame_0",
+        "frame_1": "textures/entity/humanoidf/static/frame_1",
+        "frame_2": "textures/entity/humanoidf/static/frame_2",
+        "frame_3": "textures/entity/humanoidf/static/frame_3",
+        "frame_4": "textures/entity/humanoidf/static/frame_4",
+        "frame_5": "textures/entity/humanoidf/static/frame_5",
+        "frame_6": "textures/entity/humanoidf/static/frame_6"
+      },
+      "geometry": {
+        "default": "geometry.humanoidf"
+      },
+      "scripts": {
+        "animate": [
+          "controller",
+          "controller2"
+        ]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "walk": "animation.humanoidf.walk",
+        "attack": "animation.humanoidf.attack",
+        "idle": "animation.humanoidf.idle",
+        "controller": "controller.animation.humanoidf.move",
+        "controller2": "controller.animation.humanoidf.attack"
+      },
+      "render_controllers": [
+          {"controller.render.humanoidf": "!(query.variant == 8)"}, {"controller.render.humanoidstatic": "query.variant == 8"}
+      ],
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#ff00ff"
+      }
+    }
+  }
+}
