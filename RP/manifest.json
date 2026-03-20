@@ -1,33 +1,18 @@
 {
-    "format_version": 2,
-    "header": {
-        "description": "Backrooms Mobs",
-        "name": "Backrooms Mobs Resource Pack",
-        "uuid": "21d064b3-13fe-4a46-a382-64b98edb81b0",
-        "version": [
-            0,
-            0,
-            1
-        ],
-        "min_engine_version": [
-            1,
-            21,
-            50
-        ]
-    },
-    "modules": [
-        {
-            "description": "Backrooms Mobs",
-            "type": "resources",
-            "uuid": "e01bf6d9-0357-4bf9-8825-ba852d6722af",
-            "version": [
-                0,
-                0,
-                1
-            ]
-        }
-    ],
-    "metadata": {
-        "authors": ["Peithonic"]
-    }
+	"format_version": 2,
+	"header": {
+		"description": "Backrooms Mobs RP 1.0.8 Mob Update 4 + Changes",
+		"name": "Backrooms Mobs RP 1.0.8 Mob Update 4 + Changes",
+		"uuid": "97112575-e81a-4897-b744-a3dab862a76e",
+		"version": [0, 0, 8],
+		"min_engine_version": [1, 21, 50]
+	},
+	"modules": [
+		{
+			"description": "Backrooms Mobs RP 1.0.8 Mob Update 4 + Changes",
+			"type": "resources",
+			"uuid": "9d3699a7-620d-4c29-ad0c-47e631e35b81",
+			"version": [0, 0, 8]
+		}
+	]
 }
