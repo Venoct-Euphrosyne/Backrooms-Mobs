@@ -17,9 +17,13 @@ Current Mobs:
 
 #5 Clump 
 
+#8 Hound - 1.0.8
+
 #10 Skin Stealer - 1.0.4
 
 #12 Dunk - 1.0.7
+
+#16 Nguithr'xurh - 1.0.8
 
 #38 Humanoid (Male and Female, 2 entities)
 
