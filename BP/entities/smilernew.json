@@ -57,7 +57,14 @@
             "event": "ve:move",
             "filter": "self"
           }
-        }
+        },
+         "minecraft:behavior.melee_box_attack": {
+        "priority": 1,
+        "cooldown_time": 0
+      },
+      "minecraft:attack": {
+        "damage": 9999
+      }
       },
       "minecraft:immobile": {
         "minecraft:movement": {
@@ -131,7 +138,7 @@
         "table": "loot_tables/entities/smiler.json"
       },
       "minecraft:collision_box": {
-        "width": 0.6,
+        "width": 1.0,
         "height": 1.5
       },
       "minecraft:health": {
@@ -171,7 +178,7 @@
         "priority": 5
       },
       "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
+        "priority": 1,
         "must_see": true,
         "reselect_targets": true,
         "within_radius": 25.0,
