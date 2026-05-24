@@ -1,18 +1,18 @@
 {
 	"format_version": 2,
 	"header": {
-		"description": "Backrooms Mobs RP 1.0.8 Mob Update 4 + Changes",
-		"name": "Backrooms Mobs RP 1.0.8 Mob Update 4 + Changes",
+		"description": "Backrooms Mobs BP 1.0.9 BUGFIX",
+		"name": "Backrooms Mobs BP 1.0.9 BUGFIX",
 		"uuid": "97112575-e81a-4897-b744-a3dab862a76e",
-		"version": [0, 0, 8],
+		"version": [0, 0, 9],
 		"min_engine_version": [1, 21, 50]
 	},
 	"modules": [
 		{
-			"description": "Backrooms Mobs RP 1.0.8 Mob Update 4 + Changes",
+			"description": "Backrooms Mobs BP 1.0.9 BUGFIX",
 			"type": "resources",
 			"uuid": "9d3699a7-620d-4c29-ad0c-47e631e35b81",
-			"version": [0, 0, 8]
+			"version": [0, 0, 9]
 		}
 	]
 }
