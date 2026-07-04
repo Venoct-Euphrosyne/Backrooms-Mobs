@@ -1,0 +1,270 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ve:bone_thief",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"scripts": {
+				"animate": [
+					"bone_thief_jumpscare_controller"
+				]
+			},
+			"animations": {
+				"bone_thief_jumpscare": "animation.bone_thief_jumpscare",
+				"bone_thief_jumpscare_controller": "controller.animation.bone_thief_jumpscare_controller"
+			}
+		},
+		"component_groups": {
+			"ve:stationary_state": {
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"speed_multiplier": 0,
+					"reach_multiplier": 2.5,
+					"attack_once": false,
+					"track_target": true,
+					"on_attack": {
+						"target": "self",
+						"event": "ve:jumpscare_state_event"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"must_see": true,
+					"within_radius": 16,
+					"must_see_forget_duration": 2.5,
+					"entity_types": [
+						{
+							"filters": [
+								{
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								}
+							],
+							"max_dist": 16
+						}
+					]
+				},
+				"minecraft:on_target_escape": {
+					"target": "self",
+					"event": "ve:patrol_state_event"
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 5,
+					"time_down_event": {
+						"filters": [
+							{
+								"any_of": [
+									{
+										"test": "has_target",
+										"subject": "self",
+										"operator": "==",
+										"value": false
+									}
+								]
+							}
+						],
+						"event": "ve:patrol_state_event",
+						"target": "self"
+					}
+				}
+			},
+			"ve:patrol_state": {
+				"minecraft:movement": {
+					"value": 0.15
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 0,
+					"must_see": true,
+					"within_radius": 16,
+					"must_see_forget_duration": 2.5,
+					"entity_types": [
+						{
+							"filters": [
+								{
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								}
+							],
+							"max_dist": 16
+						}
+					]
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 1,
+					"speed_multiplier": 1
+				},
+				"minecraft:on_target_acquired": {
+					"target": "self",
+					"event": "ve:stationary_state_event"
+				}
+			},
+			"ve:jumpscare_state": {
+				"minecraft:is_sheared": {},
+				"minecraft:movement": {
+					"value": 0.05
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 0,
+					"interval": 0,
+					"xz_dist": 5
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1.25,
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:stationary_state_event"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?5:0"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"monster",
+					"hostile",
+					"backroom_entity"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:scale": {
+				"value": 1.5
+			},
+			"minecraft:health": {
+				"value": 20
+			},
+			"minecraft:attack": {
+				"damage": 0
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"family_types": [
+					"player"
+				],
+				"rider_can_interact": false,
+				"seats": [
+					{
+						"position": [
+							0,
+							0.125,
+							2.75
+						],
+						"rotate_rider_by": 180,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:follow_range": {
+				"value": 16
+			},
+			"minecraft:navigation.walk": {},
+			"minecraft:collision_box": {
+				"width": 1.75,
+				"height": 1.25
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"max_distance": 16
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"ve:patrol_state"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:stationary_state",
+						"ve:jumpscare_state"
+					]
+				}
+			},
+			"ve:stationary_state_event": {
+				"add": {
+					"component_groups": [
+						"ve:stationary_state"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:patrol_state",
+						"ve:jumpscare_state"
+					]
+				}
+			},
+			"ve:patrol_state_event": {
+				"add": {
+					"component_groups": [
+						"ve:patrol_state"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:stationary_state",
+						"ve:jumpscare_state"
+					]
+				}
+			},
+			"ve:jumpscare_state_event": {
+				"add": {
+					"component_groups": [
+						"ve:jumpscare_state"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:stationary_state",
+						"ve:patrol_state"
+					]
+				}
+			}
+		}
+	}
+}
