@@ -1,44 +1,18 @@
 {
 	"format_version": 2,
-	"metadata": {
-		"authors": [
-			"Peithonic Mods"
-		]
-	},
 	"header": {
-		"name": "Backrooms Mobs",
-		"description": "Backrooms Mobs",
-		"min_engine_version": [
-			1,
-			21,
-			0
-		],
-		"uuid": "22d3a692-452e-48af-adbe-ddda800589a5",
-		"version": [
-			1,
-			0,
-			0
-		]
+		"description": "Backrooms Mobs BP 1.0.9 BUGFIX",
+		"name": "Backrooms Mobs BP 1.0.9 BUGFIX",
+		"uuid": "97112575-e81a-4897-b744-a3dab862a76e",
+		"version": [0, 0, 9],
+		"min_engine_version": [1, 21, 50]
 	},
 	"modules": [
 		{
+			"description": "Backrooms Mobs BP 1.0.9 BUGFIX",
 			"type": "resources",
-			"uuid": "0628f892-8313-4bcb-b546-5e07c0bcf2ec",
-			"version": [
-				1,
-				0,
-				0
-			]
-		}
-	],
-	"dependencies": [
-		{
-			"uuid": "22d3a692-452e-48af-adbe-ddda800589a5",
-			"version": [
-				1,
-				0,
-				0
-			]
+			"uuid": "9d3699a7-620d-4c29-ad0c-47e631e35b81",
+			"version": [0, 0, 9]
 		}
 	]
 }
