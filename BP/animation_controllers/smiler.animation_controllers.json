@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.smiler_jumpscare_controller": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jumpscare": "query.is_sheared"
+						}
+					]
+				},
+				"jumpscare": {
+					"animations": [
+						"smiler_jumpscare"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sheared"
+						}
+					]
+				}
+			}
+		}
+	}
+}

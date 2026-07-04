@@ -1,25 +1,20 @@
 {
-	"format_version": "1.21.50",
+	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "ve:strider",
 			"is_spawnable": true,
-			"is_summonable": true,
-			"is_experimental": false
+			"is_summonable": true
 		},
 		"component_groups": {
-			"ve:non_alerted": {
+			"ve:neutral_state": {
 				"minecraft:follow_range": {
-					"value": 16
+					"value": 32
 				},
-				"minecraft:on_friendly_anger": {
-				"event": "ve:alerted_by_watcher",
-				"target": "self"
-			},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 2,
 					"must_see": true,
-					"within_radius": 16,
+					"within_radius": 32,
 					"must_see_forget_duration": 15,
 					"entity_types": [
 						{
@@ -30,18 +25,18 @@
 									"subject": "other"
 								}
 							],
-							"max_dist": 16
+							"max_dist": 32
 						}
 					]
 				}
 			},
-			"ve:alerted_by_watcher": {
+			"ve:alerted_state": {
 				"minecraft:follow_range": {
 					"value": 320
 				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 2,
-					"must_see": false,
+					"must_see": true,
 					"within_radius": 320,
 					"must_see_forget_duration": 15,
 					"entity_types": [
@@ -66,32 +61,18 @@
 			},
 			"minecraft:type_family": {
 				"family": [
-					"brstrider"
+					"monster",
+					"hostile",
+					"backrooms_strider",
+					"backroom_entity"
 				]
 			},
-			"minecraft:preferred_path": {
-  "max_fall_blocks": 1,
-  "jump_cost": 5,
-  "default_block_cost": 0,
-  "preferred_path_blocks": [
-    {
-      "cost": 5,
-      "blocks": [
-        "grass_block",
-		"stone"
-      ]
-    },
-	{
-      "cost": 0,
-      "blocks": [
-        "tuff"
-      ]
-    }
-  ]
-},
 			"minecraft:breathable": {
 				"total_supply": 15,
 				"suffocate_time": 0
+			},
+			"minecraft:scale": {
+				"value": 1.625
 			},
 			"minecraft:health": {
 				"value": 20
@@ -105,42 +86,56 @@
 			"minecraft:movement.basic": {},
 			"minecraft:navigation.walk": {
 				"is_amphibious": true,
-				"can_pass_doors": true,
+				"avoid_water": true,
 				"can_walk": true,
-				"can_break_doors": true,
-				"blocks_to_avoid": [
-					"grass_block"
-				]
+				"can_pass_doors": true,
+				"can_break_doors": true
 			},
 			"minecraft:jump.static": {},
 			"minecraft:collision_box": {
-				"width": 3,
-				"height": 4
+				"width": 2.75,
+				"height": 3.75
 			},
 			"minecraft:despawn": {
 				"despawn_from_distance": {
-					"max_distance": 16
+					"max_distance": 32
 				}
 			},
 			"minecraft:behavior.melee_attack": {
-				"priority": 1,
+				"priority": 0,
+				"reach_multiplier": 0.5,
 				"attack_once": false,
-				"track_target": true,
-				"reach_multiplier": 15
+				"track_target": true
 			},
 			"minecraft:behavior.random_stroll": {
-				"priority": 0,
-				"interval": 1,
-				"xz_dist": 50
+				"priority": 3
 			},
 			"minecraft:behavior.look_at_player": {
-				"priority": 1,
+				"priority": 4,
 				"look_distance": 16,
-				"probability": 8
+				"probability": 0.5
 			},
 			"minecraft:on_target_acquired": {
 				"target": "self",
 				"event": "minecraft:entity_spawned"
+			},
+			"minecraft:on_friendly_anger": {
+				"filters": {
+					"test": "is_family",
+					"value": "backroom_entity",
+					"subject": "other"
+				},
+				"target": "self",
+				"event": "ve:alerted_state_event"
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": true,
+						"damage_multiplier": 0.0125
+					}
+				]
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
@@ -156,29 +151,30 @@
 					"max_dropped_ticks": 10,
 					"use_motion_prediction_hints": true
 				}
-			},
-			"minecraft:behavior.delayed_attack": {
-          "attack_duration": 0.8333,
-          "hit_delay_pct": 0.69
-        }
+			}
 		},
 		"events": {
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [
-						"ve:non_alerted"
-					]
-				}
-			},
-			"ve:alerted_by_watcher": {
-				"add": {
-					"component_groups": [
-						"ve:alerted_by_watcher"
+						"ve:neutral_state"
 					]
 				},
 				"remove": {
 					"component_groups": [
-						"ve:non_alerted"
+						"ve:alerted_state"
+					]
+				}
+			},
+			"ve:alerted_state_event": {
+				"add": {
+					"component_groups": [
+						"ve:alerted_state"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:neutral_state"
 					]
 				}
 			}

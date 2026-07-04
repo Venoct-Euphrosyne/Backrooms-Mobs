@@ -2,35 +2,11 @@
 	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "ve:partypooper",
+			"identifier": "ve:nguithr'xurh",
 			"is_spawnable": true,
 			"is_summonable": true
 		},
-		"component_groups": {
-			"ve:neutral_state": {
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"on_damage": {
-								"filters": [
-									{
-										"test": "actor_health",
-										"value": 10,
-										"operator": "<="
-									}
-								],
-								"target": "self",
-								"event": "ve:injured_state_event"
-							},
-							"cause": "all"
-						}
-					]
-				}
-			},
-			"ve:injured_state": {
-				"minecraft:is_sheared": {}
-			}
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:experience_reward": {
@@ -40,7 +16,6 @@
 				"family": [
 					"monster",
 					"hostile",
-					"partpooper",
 					"backroom_entity"
 				]
 			},
@@ -52,33 +27,27 @@
 			},
 			"minecraft:nameable": {},
 			"minecraft:scale": {
-				"value": 1.025
+				"value": 0.2
 			},
 			"minecraft:health": {
-				"value": 20
+				"value": 40
 			},
-			"minecraft:follow_range": {
-				"value": 32
+			"minecraft:attack": {
+				"damage": 8
 			},
 			"minecraft:movement": {
-				"value": 0.275
+				"value": 0.2
 			},
 			"minecraft:movement.basic": {},
-			"minecraft:navigation.walk": {
-				"is_amphibious": true,
-				"can_pass_doors": true,
-				"can_walk": true,
-				"can_break_doors": true
-			},
+			"minecraft:can_climb": {},
+			"minecraft:navigation.climb": {},
 			"minecraft:jump.static": {},
 			"minecraft:collision_box": {
-				"width": 0.75,
-				"height": 2.25
+				"width": 4,
+				"height": 1
 			},
 			"minecraft:despawn": {
-				"despawn_from_distance": {
-					"max_distance": 32
-				}
+				"despawn_from_distance": {}
 			},
 			"minecraft:hurt_on_condition": {
 				"damage_conditions": [
@@ -94,27 +63,55 @@
 					}
 				]
 			},
-			"minecraft:behavior.equip_item": {
+			"minecraft:behavior.float": {
 				"priority": 0
 			},
-			"minecraft:behavior.stomp_turtle_egg": {
+			"minecraft:behavior.melee_box_attack": {
+				"can_spread_on_fire": true,
 				"priority": 1,
+				"on_attack": {
+					"target": "self",
+					"event": "on_attack"
+				}
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"within_radius": 12,
+				"must_see_forget_duration": 40,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 12
+					}
+				]
+			},
+			"minecraft:behavior.stomp_turtle_egg": {
+				"priority": 3,
 				"speed_multiplier": 1,
 				"search_range": 10,
 				"search_height": 2,
 				"goal_radius": 1.14,
 				"interval": 20
 			},
+			"minecraft:behavior.move_towards_target": {
+				"priority": 4,
+				"speed_multiplier": 1
+			},
 			"minecraft:behavior.look_at_player": {
-				"priority": 2,
+				"priority": 5,
 				"look_distance": 6,
-				"probability": 0.025
+				"probability": 0.02
 			},
 			"minecraft:behavior.random_look_around": {
-				"priority": 3
+				"priority": 6
 			},
 			"minecraft:behavior.random_stroll": {
-				"priority": 4,
+				"priority": 7,
 				"speed_multiplier": 1
 			},
 			"minecraft:damage_sensor": {
@@ -122,7 +119,11 @@
 					{
 						"cause": "all",
 						"deals_damage": true,
-						"damage_multiplier": 0.25
+						"damage_multiplier": 0.025
+					},
+					{
+						"cause": "fall",
+						"deals_damage": false
 					}
 				]
 			},
@@ -130,9 +131,6 @@
 			"minecraft:pushable": {
 				"is_pushable": true,
 				"is_pushable_by_piston": true
-			},
-			"minecraft:knockback_resistance": {
-				"value": 0
 			},
 			"minecraft:conditional_bandwidth_optimization": {
 				"default_values": {
@@ -143,22 +141,12 @@
 			}
 		},
 		"events": {
-			"minecraft:entity_spawned": {
-				"add": {
-					"component_groups": [
-						"ve:neutral_state"
-					]
-				}
-			},
-			"ve:injured_state_event": {
-				"add": {
-					"component_groups": [
-						"ve:injured_state"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"ve:neutral_state"
+			"on_attack": {
+				"queue_command": {
+					"command": [
+						"effect @p blindness 5 1 true",
+						"effect @p poison 5 1 true",
+						"effect @p nausea 15 1 true"
 					]
 				}
 			}

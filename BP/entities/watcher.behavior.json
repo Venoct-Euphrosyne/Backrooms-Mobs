@@ -1,34 +1,69 @@
 {
-	"format_version": "1.21.50",
+	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "ve:watcher",
 			"is_spawnable": true,
-			"is_summonable": true,
-			"is_experimental": false
+			"is_summonable": true
 		},
 		"component_groups": {
-			"ve:target_searching": {
+			"ve:searching_state": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
 				"minecraft:on_target_acquired": {
 					"target": "self",
-					"event": "ve:target_found_event"
+					"event": "ve:aggressive_state_event"
 				}
 			},
-			"ve:target_found": {
+			"ve:aggressive_state": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 15,
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:shriek_state_event"
+					}
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true
+				}
+			},
+			"ve:shriek_state": {
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:variant": {
+					"value": 1
+				},
 				"minecraft:angry": {
 					"broadcast_anger": true,
-					"broadcast_range": 500,
+					"broadcast_range": 1000,
 					"broadcast_targets": [
-						"brstrider"
+						"backrooms_strider"
 					],
 					"calm_event": {
 						"target": "self",
-						"event": "ve:target_searching_event"
+						"event": "minecraft:entity_spawned"
 					}
 				},
-				"minecraft:on_target_escape": {
-					"event": "ve:target_searching_event",
-					"target": "self"
+				"minecraft:timer": {
+					"looping": false,
+					"time": 3.75,
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:aggressive_state_event"
+					}
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true
 				}
 			}
 		},
@@ -48,15 +83,6 @@
 				"total_supply": 15,
 				"suffocate_time": 0
 			},
-			"minecraft:behavior.melee_attack": {
-				"priority": 0,
-				"attack_once": false,
-				"track_target": true,
-				"on_kill": {
-					"event": "ve:target_searching_event",
-					"target": "self"
-				}
-			},
 			"minecraft:scale": {
 				"value": 1.75
 			},
@@ -64,29 +90,30 @@
 				"value": 20
 			},
 			"minecraft:attack": {
-				"damage": 4
+				"damage": 8
 			},
 			"minecraft:follow_range": {
 				"value": 32
 			},
-			"minecraft:movement": {
-				"value": 0.35
-			},
 			"minecraft:movement.basic": {},
 			"minecraft:navigation.walk": {
 				"is_amphibious": true,
-				"can_pass_doors": true,
+				"can_swim": true,
 				"can_walk": true,
-				"can_break_doors": true
+				"can_float": true,
+				"can_sink": false,
+				"can_pass_doors": true,
+				"can_break_doors": true,
+				"can_path_over_water": true
 			},
 			"minecraft:jump.static": {},
 			"minecraft:collision_box": {
-				"width": 0.5,
+				"width": 1,
 				"height": 1.75
 			},
 			"minecraft:despawn": {
 				"despawn_from_distance": {
-					"max_distance": 16
+					"max_distance": 32
 				}
 			},
 			"minecraft:behavior.nearest_attackable_target": {
@@ -113,14 +140,21 @@
 				"priority": 2
 			},
 			"minecraft:behavior.random_stroll": {
-				"priority": 3,
-				"interval": 2,
-				"xz_dist": 50
+				"priority": 3
 			},
 			"minecraft:behavior.look_at_player": {
 				"priority": 4,
 				"look_distance": 16,
 				"probability": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": true,
+						"damage_multiplier": 0.025
+					}
+				]
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
@@ -136,42 +170,42 @@
 					"max_dropped_ticks": 10,
 					"use_motion_prediction_hints": true
 				}
-			},
-      "minecraft:variable_max_auto_step": {
-        "base_value": 1.5625,
-        "controlled_value": 1.5625,
-        "jump_prevented_value": 0.5625
-      }
+			}
 		},
 		"events": {
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [
-						"ve:target_searching"
-					]
-				}
-			},
-			"ve:target_found_event": {
-				"add": {
-					"component_groups": [
-						"ve:target_found"
+						"ve:searching_state"
 					]
 				},
 				"remove": {
 					"component_groups": [
-						"ve:target_searching"
+						"ve:aggressive_state"
 					]
 				}
 			},
-			"ve:target_searching_event": {
+			"ve:aggressive_state_event": {
 				"add": {
 					"component_groups": [
-						"ve:target_searching"
+						"ve:aggressive_state"
 					]
 				},
 				"remove": {
 					"component_groups": [
-						"ve:target_found"
+						"ve:searching_state"
+					]
+				}
+			},
+			"ve:shriek_state_event": {
+				"add": {
+					"component_groups": [
+						"ve:shriek_state"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:aggressive_state"
 					]
 				}
 			}

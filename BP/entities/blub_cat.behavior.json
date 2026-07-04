@@ -1,0 +1,2906 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ve:blub_cat",
+			"is_spawnable": true,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"ve:wild_neutral_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 0.35,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:neutral_flat_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_neutral_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 0
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_lazy_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:wild_lazy_flat_sleeping_event"
+					}
+				},
+				"minecraft:tameable": {
+					"probability": 1,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:lazy_flat_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.125
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:wild_lazy_flat_blub_cat_sleeping": {
+				"minecraft:is_baby": {},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:wild_lazy_flat_awake_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"ve:tamed_lazy_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_tamed": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:tamed_lazy_flat_sleeping_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.125
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 0
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:tamed_lazy_flat_blub_cat_sleeping": {
+				"minecraft:is_baby": {},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:tamed_lazy_flat_awake_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"ve:wild_happy_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_sheared": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 0.5,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:happy_flat_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_happy_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_sheared": {},
+				"minecraft:is_tamed": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 0
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_sassy_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 0.0125,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:sassy_flat_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": [
+									{
+										"test": "is_family",
+										"operator": "==",
+										"value": "player",
+										"subject": "other"
+									}
+								],
+								"target": "self",
+								"event": "ve:angry_event"
+							},
+							"cause": "all"
+						}
+					]
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_sassy_flat_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:sittable": {},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": [
+									{
+										"test": "is_family",
+										"operator": "==",
+										"value": "player",
+										"subject": "other"
+									}
+								],
+								"target": "self",
+								"event": "ve:angry_event"
+							},
+							"cause": "all"
+						}
+					]
+				},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 0
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_neutral_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 0.35,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:neutral_long_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.275
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_neutral_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.275
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_lazy_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:wild_lazy_long_sleeping_event"
+					}
+				},
+				"minecraft:tameable": {
+					"probability": 0.75,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:lazy_long_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.15
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:wild_lazy_long_blub_cat_sleeping": {
+				"minecraft:is_baby": {},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:wild_lazy_long_awake_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"ve:tamed_lazy_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:tamed_lazy_long_sleeping_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.15
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:tamed_lazy_long_blub_cat_sleeping": {
+				"minecraft:is_baby": {},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:tamed_lazy_long_awake_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"ve:wild_happy_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_sheared": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 0.5,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:happy_long_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.275
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_happy_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_sheared": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.275
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_sassy_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 0.0125,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:sassy_long_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.275
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": [
+									{
+										"test": "is_family",
+										"operator": "==",
+										"value": "player",
+										"subject": "other"
+									}
+								],
+								"target": "self",
+								"event": "ve:angry_event"
+							},
+							"cause": "all"
+						}
+					]
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_sassy_long_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.275
+				},
+				"minecraft:sittable": {},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": [
+									{
+										"test": "is_family",
+										"operator": "==",
+										"value": "player",
+										"subject": "other"
+									}
+								],
+								"target": "self",
+								"event": "ve:angry_event"
+							},
+							"cause": "all"
+						}
+					]
+				},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_neutral_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 1,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:neutral_round_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.215
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_neutral_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_tamed": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.215
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_lazy_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:wild_lazy_round_sleeping_event"
+					}
+				},
+				"minecraft:tameable": {
+					"probability": 1,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:lazy_round_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.075
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:wild_lazy_round_blub_cat_sleeping": {
+				"minecraft:is_baby": {},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:wild_lazy_round_awake_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"ve:tamed_lazy_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_tamed": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:tamed_lazy_round_sleeping_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.075
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:tamed_lazy_round_blub_cat_sleeping": {
+				"minecraft:is_baby": {},
+				"minecraft:timer": {
+					"looping": false,
+					"random_time_choices": [
+						{
+							"weight": 10,
+							"value": 15
+						},
+						{
+							"weight": 2,
+							"value": 5
+						}
+					],
+					"time_down_event": {
+						"target": "self",
+						"event": "ve:tamed_lazy_round_awake_event"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"ve:wild_happy_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_sheared": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 1,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:happy_round_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.215
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_happy_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_sheared": {},
+				"minecraft:is_tamed": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.215
+				},
+				"minecraft:sittable": {},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:wild_sassy_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 10
+				},
+				"minecraft:tameable": {
+					"probability": 0.75,
+					"tame_items": [
+						"minecraft:tropical_fish",
+						"minecraft:cod",
+						"minecraft:salmon"
+					],
+					"tame_event": {
+						"event": "ve:sassy_round_on_tame_event",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.215
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": [
+									{
+										"test": "is_family",
+										"operator": "==",
+										"value": "player",
+										"subject": "other"
+									}
+								],
+								"target": "self",
+								"event": "ve:angry_event"
+							},
+							"cause": "all"
+						}
+					]
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"attack_once": false,
+					"track_target": true,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "rabbit"
+							},
+							"max_dist": 8
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 8
+						}
+					]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 8,
+							"walk_speed_multiplier": 0.75,
+							"sprint_speed_multiplier": 1
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_dwelling_restriction": {
+					"priority": 3
+				}
+			},
+			"ve:tamed_sassy_round_blub_cat": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:leashable_to": {},
+				"minecraft:is_tamed": {},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 0.975
+				},
+				"minecraft:health": {
+					"value": 20
+				},
+				"minecraft:movement": {
+					"value": 0.215
+				},
+				"minecraft:sittable": {},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": [
+									{
+										"test": "is_family",
+										"operator": "==",
+										"value": "player",
+										"subject": "other"
+									}
+								],
+								"target": "self",
+								"event": "ve:angry_event"
+							},
+							"cause": "all"
+						}
+					]
+				},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 0,
+					"filters": {
+						"all_of": [
+							{
+								"test": "owner_distance",
+								"operator": ">",
+								"value": 12
+							},
+							{
+								"test": "is_panicking"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.pet_sleep_with_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"search_radius": 10,
+					"search_height": 10,
+					"goal_radius": 1
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"ve:blub_cat_angry": {
+				"minecraft:mark_variant": {
+					"value": 20
+				}
+			},
+			"ve:blub_cat_white": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"ve:blub_cat_tuxedo": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"ve:blub_cat_red": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"ve:blub_cat_siamese": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"ve:blub_cat_british": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"ve:blub_cat_calico": {
+				"minecraft:variant": {
+					"value": 5
+				}
+			},
+			"ve:blub_cat_persian": {
+				"minecraft:variant": {
+					"value": 6
+				}
+			},
+			"ve:blub_cat_ragdoll": {
+				"minecraft:variant": {
+					"value": 7
+				}
+			},
+			"ve:blub_cat_tabby": {
+				"minecraft:variant": {
+					"value": 8
+				}
+			},
+			"ve:blub_cat_black": {
+				"minecraft:variant": {
+					"value": 9
+				}
+			},
+			"ve:blub_cat_jellie": {
+				"minecraft:variant": {
+					"value": 10
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:type_family": {
+				"family": [
+					"cat",
+					"docile",
+					"backroom_entity"
+				]
+			},
+			"minecraft:nameable": {},
+			"minecraft:leashable": {},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:attack": {
+				"damage": 4
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"can_float": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:jump.static": {},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.75
+			},
+			"minecraft:healable": {
+				"items": [
+					{
+						"item": "minecraft:tropical_fish",
+						"heal_amount": 2
+					},
+					{
+						"item": "minecraft:cod",
+						"heal_amount": 2
+					},
+					{
+						"item": "minecraft:salmon",
+						"heal_amount": 2
+					}
+				]
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"max_distance": 32
+				}
+			},
+			"minecraft:dweller": {
+				"dwelling_type": "village",
+				"dweller_role": "passive",
+				"update_interval_base": 60,
+				"update_interval_variant": 40,
+				"can_find_poi": false,
+				"can_migrate": true,
+				"first_founding_reward": 0
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.panic": {
+				"priority": 2,
+				"speed_multiplier": 1.125
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 3,
+				"speed_multiplier": 0.85
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 4,
+				"look_distance": 6,
+				"probability": 0.025
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": true,
+						"damage_multiplier": 0.025
+					},
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:knockback_resistance": {
+				"value": 0
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_neutral_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_lazy_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_happy_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_sassy_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_neutral_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_lazy_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_happy_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_sassy_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_neutral_round_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_lazy_round_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_happy_round_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_sassy_round_blub_cat"
+									]
+								},
+								"remove": {}
+							}
+						]
+					},
+					{
+						"randomize": [
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_white"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_tuxedo"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_red"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_siamese"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_british"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_calico"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_persian"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_ragdoll"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_tabby"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_black"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_jellie"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"minecraft:spawn_from_village": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_neutral_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_lazy_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_happy_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_sassy_flat_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_neutral_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_lazy_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_happy_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_sassy_long_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_neutral_round_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_lazy_round_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_happy_round_blub_cat"
+									]
+								},
+								"remove": {}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"ve:wild_sassy_round_blub_cat"
+									]
+								},
+								"remove": {}
+							}
+						]
+					},
+					{
+						"randomize": [
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_white"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_tuxedo"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_red"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_siamese"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_british"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_calico"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_persian"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_ragdoll"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_tabby"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_black"
+									]
+								}
+							},
+							{
+								"weight": 15,
+								"add": {
+									"component_groups": [
+										"ve:blub_cat_jellie"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"ve:neutral_flat_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_neutral_flat_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_neutral_flat_blub_cat"
+					]
+				}
+			},
+			"ve:lazy_flat_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_flat_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_lazy_flat_blub_cat"
+					]
+				}
+			},
+			"ve:happy_flat_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_happy_flat_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_happy_flat_blub_cat"
+					]
+				}
+			},
+			"ve:sassy_flat_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_sassy_flat_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_sassy_flat_blub_cat"
+					]
+				}
+			},
+			"ve:neutral_long_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_neutral_long_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_neutral_long_blub_cat"
+					]
+				}
+			},
+			"ve:lazy_long_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_long_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_lazy_long_blub_cat"
+					]
+				}
+			},
+			"ve:happy_long_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_happy_long_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_happy_long_blub_cat"
+					]
+				}
+			},
+			"ve:sassy_long_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_sassy_long_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_sassy_long_blub_cat"
+					]
+				}
+			},
+			"ve:neutral_round_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_neutral_round_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_neutral_round_blub_cat"
+					]
+				}
+			},
+			"ve:lazy_round_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_round_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_lazy_round_blub_cat"
+					]
+				}
+			},
+			"ve:happy_round_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_happy_round_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_happy_round_blub_cat"
+					]
+				}
+			},
+			"ve:sassy_round_on_tame_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_sassy_round_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_sassy_round_blub_cat"
+					]
+				}
+			},
+			"ve:wild_lazy_flat_sleeping_event": {
+				"add": {
+					"component_groups": [
+						"ve:wild_lazy_flat_blub_cat_sleeping"
+					]
+				},
+				"remove": {}
+			},
+			"ve:wild_lazy_flat_awake_event": {
+				"add": {
+					"component_groups": [
+						"ve:wild_lazy_flat_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_lazy_flat_blub_cat_sleeping"
+					]
+				}
+			},
+			"ve:tamed_lazy_flat_sleeping_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_flat_blub_cat_sleeping"
+					]
+				},
+				"remove": {
+					"component_groups": []
+				}
+			},
+			"ve:tamed_lazy_flat_awake_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_flat_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:tamed_lazy_flat_blub_cat_sleeping"
+					]
+				}
+			},
+			"ve:wild_lazy_long_sleeping_event": {
+				"add": {
+					"component_groups": [
+						"ve:wild_lazy_long_blub_cat_sleeping"
+					]
+				},
+				"remove": {
+					"component_groups": []
+				}
+			},
+			"ve:wild_lazy_long_awake_event": {
+				"add": {
+					"component_groups": [
+						"ve:wild_lazy_long_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_lazy_long_blub_cat_sleeping"
+					]
+				}
+			},
+			"ve:tamed_lazy_long_sleeping_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_long_blub_cat_sleeping"
+					]
+				},
+				"remove": {
+					"component_groups": []
+				}
+			},
+			"ve:tamed_lazy_long_awake_event": {
+				"add": {
+					"component_groups": [
+						"ve:wild_lazy_long_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:tamed_lazy_long_blub_cat_sleeping"
+					]
+				}
+			},
+			"ve:wild_lazy_round_sleeping_event": {
+				"add": {
+					"component_groups": [
+						"ve:wild_lazy_round_blub_cat_sleeping"
+					]
+				},
+				"remove": {
+					"component_groups": []
+				}
+			},
+			"ve:wild_lazy_round_awake_event": {
+				"add": {
+					"component_groups": [
+						"ve:wild_lazy_round_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:wild_lazy_round_blub_cat_sleeping"
+					]
+				}
+			},
+			"ve:tamed_lazy_round_sleeping_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_round_blub_cat_sleeping"
+					]
+				},
+				"remove": {
+					"component_groups": []
+				}
+			},
+			"ve:tamed_lazy_round_awake_event": {
+				"add": {
+					"component_groups": [
+						"ve:tamed_lazy_round_blub_cat"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ve:tamed_lazy_round_blub_cat_sleeping"
+					]
+				}
+			},
+			"ve:angry_event": {
+				"add": {
+					"component_groups": [
+						"ve:blub_cat_angry"
+					]
+				},
+				"remove": {}
+			}
+		}
+	}
+}
