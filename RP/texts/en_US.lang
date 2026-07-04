@@ -1,0 +1,61 @@
+entity.ve:bacteria.name=Bacteria
+item.spawn_egg.entity.ve:bacteria.name=Bacteria Spawn Egg
+
+entity.ve:smiler.name=Smiler
+item.spawn_egg.entity.ve:smiler.name=Smiler Spawn Egg
+
+entity.ve:deathmoth.name=Deathmoth
+item.spawn_egg.entity.ve:deathmoth.name=Deathmoth Spawn Egg
+
+entity.ve:clump.name=Clump
+item.spawn_egg.entity.ve:clump.name=Clump Spawn Egg
+
+entity.ve:duller.name=Duller
+item.spawn_egg.entity.ve:duller.name=Duller Spawn Egg
+
+entity.ve:hound.name=Hound
+item.spawn_egg.entity.ve:hound.name=Hound Spawn Egg
+
+entity.ve:skin_stealer.name=Skin Stealer
+item.spawn_egg.entity.ve:skin_stealer.name=Skin Stealer Spawn Egg
+
+entity.ve:dunk.name=Dunk
+item.spawn_egg.entity.ve:dunk.name=Dunk Spawn Egg
+
+entity.ve:wretch.name=Wretch
+item.spawn_egg.entity.ve:wretch.name=Wretch Spawn Egg
+
+entity.ve:nguithr'xurh.name=Nguithr'xurh
+item.spawn_egg.entity.ve:nguithr'xurh.name=Nguithr'xurh Spawn Egg
+
+entity.ve:blub_cat.name=Blub Cat
+item.spawn_egg.entity.ve:blub_cat.name=Blub Cat Spawn Egg
+
+entity.ve:humanoid_male.name=Humanoid Male
+item.spawn_egg.entity.ve:humanoid_male.name=Humanoid Male Spawn Egg
+
+entity.ve:humanoid_female.name=Humanoid Female
+item.spawn_egg.entity.ve:humanoid_female.name=Humanoid Female Spawn Egg
+
+entity.ve:partygoer.name=Partygoer
+item.spawn_egg.entity.ve:partygoer.name=Partygoer Spawn Egg
+
+entity.ve:partypooper.name=Partypooper
+item.spawn_egg.entity.ve:partypooper.name=Partypooper Spawn Egg
+
+entity.ve:strider.name=Neighborhood Watch Strider
+item.spawn_egg.entity.ve:strider.name=Strider Spawn Egg
+
+entity.ve:swimmer.name=Neighborhood Watch Swimmer
+item.spawn_egg.entity.ve:swimmer.name=Swimmer Spawn Egg
+
+entity.ve:watcher.name=Neighborhood Watch Watcher
+item.spawn_egg.entity.ve:watcher.name=Watcher Spawn Egg
+
+entity.ve:bone_thief.name=Bone Thief
+item.spawn_egg.entity.ve:bone_thief.name=Bone Thief Spawn Egg
+
+entity.ve:duller.name=Duller
+item.spawn_egg.entity.ve:duller.name=Duller Spawn Egg
+
+item.ve:red_balloon=Red Balloon
