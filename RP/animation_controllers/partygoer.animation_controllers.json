@@ -1,0 +1,269 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.partygoer.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"look_at_target",
+						{
+							"idle_no_balloon": "variable.is_idling"
+						},
+						{
+							"walk_no_balloon": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"chasing": "query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"chasing": {
+					"animations": [
+						"chase_no_balloon"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"attacking": {
+					"animations": [
+						"attack_no_balloon"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.partygoer.general_hold": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"look_at_target",
+						{
+							"idle": "variable.is_idling"
+						},
+						{
+							"walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"chasing": "query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"chasing": {
+					"animations": [
+						"chase"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"attacking": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.partygoer.general_dance": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"look_at_target",
+						{
+							"idle_dancing_no_balloon": "variable.is_idling"
+						},
+						{
+							"walk_no_balloon": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"chasing": "query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"chasing": {
+					"animations": [
+						"chase_no_balloon"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"attacking": {
+					"animations": [
+						"attack_no_balloon"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.partygoer.general_dance_hold": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"look_at_target",
+						{
+							"idle_dancing": "variable.is_idling"
+						},
+						{
+							"walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"chasing": "query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"chasing": {
+					"animations": [
+						"chase"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sheared"
+						},
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"attacking": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

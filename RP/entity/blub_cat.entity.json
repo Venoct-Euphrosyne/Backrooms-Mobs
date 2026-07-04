@@ -1,0 +1,155 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:blub_cat",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"flat_white": "textures/entities/blub_cat_textures/flat_textures/flat_white",
+				"flat_tuxedo": "textures/entities/blub_cat_textures/flat_textures/flat_tuxedo",
+				"flat_red": "textures/entities/blub_cat_textures/flat_textures/flat_red_tabby",
+				"flat_siamese": "textures/entities/blub_cat_textures/flat_textures/flat_siamese",
+				"flat_british": "textures/entities/blub_cat_textures/flat_textures/flat_british_short_hair",
+				"flat_calico": "textures/entities/blub_cat_textures/flat_textures/flat_calico",
+				"flat_persian": "textures/entities/blub_cat_textures/flat_textures/flat_persian",
+				"flat_ragdoll": "textures/entities/blub_cat_textures/flat_textures/flat_ragdoll",
+				"flat_tabby": "textures/entities/blub_cat_textures/flat_textures/flat_tabby",
+				"flat_black": "textures/entities/blub_cat_textures/flat_textures/flat_all_black",
+				"flat_jellie": "textures/entities/blub_cat_textures/flat_textures/flat_jellie",
+				"long_white": "textures/entities/blub_cat_textures/long_textures/long_white",
+				"long_tuxedo": "textures/entities/blub_cat_textures/long_textures/long_tuxedo",
+				"long_red": "textures/entities/blub_cat_textures/long_textures/long_red_tabby",
+				"long_siamese": "textures/entities/blub_cat_textures/long_textures/long_siamese",
+				"long_british": "textures/entities/blub_cat_textures/long_textures/long_british_short_hair",
+				"long_calico": "textures/entities/blub_cat_textures/long_textures/long_calico",
+				"long_persian": "textures/entities/blub_cat_textures/long_textures/long_persian",
+				"long_ragdoll": "textures/entities/blub_cat_textures/long_textures/long_ragdoll",
+				"long_tabby": "textures/entities/blub_cat_textures/long_textures/long_tabby",
+				"long_black": "textures/entities/blub_cat_textures/long_textures/long_all_black",
+				"long_jellie": "textures/entities/blub_cat_textures/long_textures/long_jellie",
+				"round_white": "textures/entities/blub_cat_textures/round_textures/round_white",
+				"round_tuxedo": "textures/entities/blub_cat_textures/round_textures/round_tuxedo",
+				"round_red": "textures/entities/blub_cat_textures/round_textures/round_red_tabby",
+				"round_siamese": "textures/entities/blub_cat_textures/round_textures/round_siamese",
+				"round_british": "textures/entities/blub_cat_textures/round_textures/round_british_short_hair",
+				"round_calico": "textures/entities/blub_cat_textures/round_textures/round_calico",
+				"round_persian": "textures/entities/blub_cat_textures/round_textures/round_persian",
+				"round_ragdoll": "textures/entities/blub_cat_textures/round_textures/round_ragdoll",
+				"round_tabby": "textures/entities/blub_cat_textures/round_textures/round_tabby",
+				"round_black": "textures/entities/blub_cat_textures/round_textures/round_all_black",
+				"round_jellie": "textures/entities/blub_cat_textures/round_textures/round_jellie"
+			},
+			"geometry": {
+				"flat": "geometry.flat_blub_cat",
+				"long": "geometry.long_blub_cat",
+				"round": "geometry.round_blub_cat"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);",
+					"variable.is_flat = query.skin_id == 0;",
+					"variable.is_long = query.skin_id == 1;",
+					"variable.is_round = query.skin_id == 2;",
+					"variable.is_persian = query.variant == 6;"
+				],
+				"animate": [
+					{
+						"flat_general_default": "!query.is_sheared&&query.mark_variant!=20&&query.skin_id==0"
+					},
+					{
+						"flat_general_happy": "query.is_sheared&&query.mark_variant!=20&&query.skin_id==0"
+					},
+					{
+						"flat_general_angry": "query.mark_variant==20&&!query.is_sheared&&query.skin_id==0"
+					},
+					{
+						"flat_persian": "variable.is_persian&&query.skin_id==0"
+					},
+					{
+						"long_general_default": "!query.is_sheared&&query.mark_variant!=20&&query.skin_id==1"
+					},
+					{
+						"long_general_happy": "query.is_sheared&&query.mark_variant!=20&&query.skin_id==1"
+					},
+					{
+						"long_general_angry": "query.mark_variant==20&&!query.is_sheared&&query.skin_id==1"
+					},
+					{
+						"long_persian": "variable.is_persian&&query.skin_id==1"
+					},
+					{
+						"round_general_default": "!query.is_sheared&&query.mark_variant!=20&&query.skin_id==2"
+					},
+					{
+						"round_general_happy": "query.is_sheared&&query.mark_variant!=20&&query.skin_id==2"
+					},
+					{
+						"round_general_angry": "query.mark_variant==20&&!query.is_sheared&&query.skin_id==2"
+					},
+					{
+						"round_persian": "variable.is_persian&&query.skin_id==2"
+					}
+				]
+			},
+			"animations": {
+				"flat_blink": "animation.flat_blub_cat.blink",
+				"flat_idle": "animation.flat_blub_cat.idle",
+				"flat_walk": "animation.flat_blub_cat.walk",
+				"flat_ear": "animation.flat_blub_cat.ear",
+				"flat_tail": "animation.flat_blub_cat.tail",
+				"flat_happy": "animation.flat_blub_cat.happy",
+				"flat_angry": "animation.flat_blub_cat.angry",
+				"flat_sleep_0": "animation.flat_blub_cat.sleep_0",
+				"flat_sleep_1": "animation.flat_blub_cat.sleep_1",
+				"flat_persian": "animation.flat_blub_cat.persian",
+				"flat_general_default": "controller.animation.flat_blub_cat.general_default",
+				"flat_general_happy": "controller.animation.flat_blub_cat.general_happy",
+				"flat_general_angry": "controller.animation.flat_blub_cat.general_angry",
+				"long_blink": "animation.long_blub_cat.blink",
+				"long_idle": "animation.long_blub_cat.idle",
+				"long_walk": "animation.long_blub_cat.walk",
+				"long_ear": "animation.long_blub_cat.ear",
+				"long_tail": "animation.long_blub_cat.tail",
+				"long_happy": "animation.long_blub_cat.happy",
+				"long_angry": "animation.long_blub_cat.angry",
+				"long_sleep_0": "animation.long_blub_cat.sleep_0",
+				"long_sleep_1": "animation.long_blub_cat.sleep_1",
+				"long_persian": "animation.long_blub_cat.persian",
+				"long_general_default": "controller.animation.long_blub_cat.general_default",
+				"long_general_happy": "controller.animation.long_blub_cat.general_happy",
+				"long_general_angry": "controller.animation.long_blub_cat.general_angry",
+				"round_blink": "animation.round_blub_cat.blink",
+				"round_idle": "animation.round_blub_cat.idle",
+				"round_walk": "animation.round_blub_cat.walk",
+				"round_ear": "animation.round_blub_cat.ear",
+				"round_tail": "animation.round_blub_cat.tail",
+				"round_happy": "animation.round_blub_cat.happy",
+				"round_angry": "animation.round_blub_cat.angry",
+				"round_sleep_0": "animation.round_blub_cat.sleep_0",
+				"round_sleep_1": "animation.round_blub_cat.sleep_1",
+				"round_persian": "animation.round_blub_cat.persian",
+				"round_general_default": "controller.animation.round_blub_cat.general_default",
+				"round_general_happy": "controller.animation.round_blub_cat.general_happy",
+				"round_general_angry": "controller.animation.round_blub_cat.general_angry"
+			},
+			"render_controllers": [
+				{
+					"controller.render.flat_blub_cat": "variable.is_flat"
+				},
+				{
+					"controller.render.long_blub_cat": "variable.is_long"
+				},
+				{
+					"controller.render.round_blub_cat": "variable.is_round"
+				}
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 1
+			}
+		}
+	}
+}

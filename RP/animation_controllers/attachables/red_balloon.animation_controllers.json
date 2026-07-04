@@ -1,0 +1,40 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.red_balloon.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						{
+							"first_person_hold": "c.is_first_person"
+						},
+						{
+							"third_person_hold": "!c.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"bobbing": "query.modified_move_speed>1"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"bobbing": {
+					"animations": [
+						{
+							"first_person_bob": "c.is_first_person",
+							"third_person_bob": "!c.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"idling": "query.modified_move_speed<0.5"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

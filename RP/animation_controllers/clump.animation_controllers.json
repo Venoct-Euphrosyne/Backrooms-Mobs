@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.clump.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_crawling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						{
+							"idle": "variable.is_idling"
+						},
+						{
+							"crawl": "variable.is_crawling"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

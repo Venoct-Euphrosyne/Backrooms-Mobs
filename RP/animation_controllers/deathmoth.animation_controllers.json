@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.deathmoth.general": {
+			"initial_state": "flying",
+			"states": {
+				"flying": {
+					"animations": [
+						"fly"
+					],
+					"transitions": [
+						{
+							"resting": "query.is_resting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"resting": {
+					"animations": [
+						"rest"
+					],
+					"transitions": [
+						{
+							"flying": "!query.is_resting"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

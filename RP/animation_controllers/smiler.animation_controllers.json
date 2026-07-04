@@ -1,0 +1,52 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.smiler.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						"idle_no_target_0",
+						"idle_no_target_1"
+					],
+					"transitions": [
+						{
+							"attacking": "variable.attack&&variable.random==0"
+						},
+						{
+							"walking": "query.has_target"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"walking": {
+					"animations": [
+						{
+							"idle_0": "(query.variant==0||query.variant==1)&&query.modified_move_speed"
+						},
+						{
+							"idle_1": "(query.variant==0||query.variant==1)&&query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"idling": "!query.has_target"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"attacking": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

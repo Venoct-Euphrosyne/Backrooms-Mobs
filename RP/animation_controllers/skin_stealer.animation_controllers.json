@@ -1,0 +1,82 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.skin_stealer.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						{
+							"idle": "variable.is_idling"
+						},
+						{
+							"walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sprinting": "query.has_target"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sprinting": {
+					"animations": [
+						"sprint"
+					],
+					"transitions": [
+						{
+							"idling": "!query.has_target"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.skin_stolen.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						{
+							"walk_disguised": "variable.is_walking"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

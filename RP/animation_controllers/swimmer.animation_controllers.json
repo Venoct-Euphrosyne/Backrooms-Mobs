@@ -1,0 +1,87 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.swimmer.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"crawling": "!query.is_in_water&&query.ground_speed>1"
+						},
+						{
+							"swimming": "query.is_swimming&&!query.is_on_ground"
+						},
+						{
+							"stalk": "query.is_interested"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"crawling": {
+					"animations": [
+						"crawl"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_in_water&&query.ground_speed<0.5"
+						},
+						{
+							"swimming": "query.is_swimming&&!query.is_on_ground"
+						},
+						{
+							"stalk": "query.is_interested"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"swimming": {
+					"animations": [
+						"look_at_target",
+						"swim"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_swimming&&query.ground_speed<0.5"
+						},
+						{
+							"crawling": "!query.is_swimming&&query.ground_speed>1"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"pounce": {
+					"animations": [
+						"pounce"
+					],
+					"transitions": [
+						{
+							"crawling": "!query.is_swimming&&query.ground_speed>1&&query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"stalk": {
+					"animations": [
+						"stalk"
+					],
+					"transitions": [
+						{
+							"pounce": "!query.is_on_ground"
+						},
+						{
+							"crawling": "!query.is_swimming&&query.ground_speed>1"
+						}
+					]
+				}
+			}
+		}
+	}
+}

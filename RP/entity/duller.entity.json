@@ -1,0 +1,41 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:duller",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/duller"
+			},
+			"geometry": {
+				"default": "geometry.duller"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.duller.look_at_target",
+				"idle": "animation.duller.idle",
+				"walk": "animation.duller.walk",
+				"sprint": "animation.duller.sprint",
+				"attack": "animation.duller.attack",
+				"general": "controller.animation.duller.general"
+			},
+			"render_controllers": [
+				"controller.render.duller"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 18
+			}
+		}
+	}
+}

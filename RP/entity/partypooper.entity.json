@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:partypooper",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/partypooper"
+			},
+			"geometry": {
+				"default": "geometry.partypooper"
+			},
+			"scripts": {
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.partypooper.look_at_target",
+				"idle": "animation.partypooper.idle",
+				"injured": "animation.partypooper.injured",
+				"walk": "animation.partypooper.walk",
+				"general": "controller.animation.partypooper.general"
+			},
+			"render_controllers": [
+				"controller.render.partypooper"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 11
+			}
+		}
+	}
+}

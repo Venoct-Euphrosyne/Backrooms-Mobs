@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.humanoid_variant": {
+			"arrays": {
+				"textures": {
+					"Array.variant": [
+						"Texture.white",
+						"Texture.red",
+						"Texture.yellow",
+						"Texture.blue",
+						"Texture.green",
+						"Texture.turquoise",
+						"Texture.orange",
+						"Texture.gray"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		},
+		"controller.render.humanoid_static": {
+			"arrays": {
+				"textures": {
+					"Array.frames": [
+						"Texture.static_frame_0",
+						"Texture.static_frame_1",
+						"Texture.static_frame_2",
+						"Texture.static_frame_3",
+						"Texture.static_frame_4",
+						"Texture.static_frame_5",
+						"Texture.static_frame_6",
+						"Texture.static_frame_7"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.frames[math.mod(math.floor(query.life_time*8),8)]"
+			]
+		}
+	}
+}

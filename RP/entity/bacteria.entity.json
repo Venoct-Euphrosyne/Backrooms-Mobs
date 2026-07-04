@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:bacteria",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/bacteria"
+			},
+			"geometry": {
+				"default": "geometry.bacteria"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.bacteria.look_at_target",
+				"idle_0": "animation.bacteria.idle_0",
+				"idle_1": "animation.bacteria.idle_1",
+				"walk": "animation.bacteria.walk",
+				"attack": "animation.bacteria.attack",
+				"jumpscare": "animation.bacteria.jumpscare",
+				"general": "controller.animation.bacteria.general"
+			},
+			"render_controllers": [
+				"controller.render.bacteria"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 0
+			}
+		}
+	}
+}

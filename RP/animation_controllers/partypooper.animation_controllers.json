@@ -1,0 +1,41 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.partypooper.general": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"look_at_target",
+						{
+							"idle": "variable.is_idling&&!query.is_sheared"
+						},
+						{
+							"walk": "variable.is_walking"
+						},
+						{
+							"injured": "query.is_sheared"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

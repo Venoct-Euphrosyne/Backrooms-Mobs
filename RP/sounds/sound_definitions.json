@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.0",
+	"sound_definitions": {
+		"smiler.scream": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/smiler_sound_effects/smiler_scream"
+			]
+		},
+		"strider.step": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/strider_sound_effects/strider_step_0",
+				"sounds/strider_sound_effects/strider_step_1",
+				"sounds/strider_sound_effects/strider_step_2",
+				"sounds/strider_sound_effects/strider_step_3",
+				"sounds/strider_sound_effects/strider_step_4"
+			]
+		}
+	}
+}

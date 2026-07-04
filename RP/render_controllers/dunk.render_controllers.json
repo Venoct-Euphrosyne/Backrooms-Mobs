@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.dunk": {
+			"arrays": {
+				"geometries": {
+					"Array.variant": [
+						"Geometry.default",
+						"Geometry.snow",
+						"Geometry.field",
+						"Geometry.stone",
+						"Geometry.playhouse",
+						"Geometry.beach",
+						"Geometry.arcade"
+					]
+				},
+				"textures": {
+					"Array.variant": [
+						"Texture.default",
+						"Texture.snow",
+						"Texture.field",
+						"Texture.stone",
+						"Texture.playhouse",
+						"Texture.beach",
+						"Texture.arcade"
+					]
+				}
+			},
+			"geometry": "array.variant[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		}
+	}
+}

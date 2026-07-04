@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:deathmoth",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/deathmoth"
+			},
+			"geometry": {
+				"default": "geometry.deathmoth"
+			},
+			"scripts": {
+				"scale": "0.35",
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"rest": "animation.deathmoth.rest",
+				"fly": "animation.deathmoth.fly",
+				"general": "controller.animation.deathmoth.general"
+			},
+			"render_controllers": [
+				"controller.render.deathmoth"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 4
+			}
+		}
+	}
+}

@@ -1,0 +1,89 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.flat_blub_cat": {
+			"arrays": {
+				"textures": {
+					"Array.variant": [
+						"Texture.flat_white",
+						"Texture.flat_tuxedo",
+						"Texture.flat_red",
+						"Texture.flat_siamese",
+						"Texture.flat_british",
+						"Texture.flat_calico",
+						"Texture.flat_persian",
+						"Texture.flat_ragdoll",
+						"Texture.flat_tabby",
+						"Texture.flat_black",
+						"Texture.flat_jellie"
+					]
+				}
+			},
+			"geometry": "geometry.flat",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		},
+		"controller.render.long_blub_cat": {
+			"arrays": {
+				"textures": {
+					"Array.variant": [
+						"Texture.long_white",
+						"Texture.long_tuxedo",
+						"Texture.long_red",
+						"Texture.long_siamese",
+						"Texture.long_british",
+						"Texture.long_calico",
+						"Texture.long_persian",
+						"Texture.long_ragdoll",
+						"Texture.long_tabby",
+						"Texture.long_black",
+						"Texture.long_jellie"
+					]
+				}
+			},
+			"geometry": "geometry.long",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		},
+		"controller.render.round_blub_cat": {
+			"arrays": {
+				"textures": {
+					"Array.variant": [
+						"Texture.round_white",
+						"Texture.round_tuxedo",
+						"Texture.round_red",
+						"Texture.round_siamese",
+						"Texture.round_british",
+						"Texture.round_calico",
+						"Texture.round_persian",
+						"Texture.round_ragdoll",
+						"Texture.round_tabby",
+						"Texture.round_black",
+						"Texture.round_jellie"
+					]
+				}
+			},
+			"geometry": "geometry.round",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		}
+	}
+}

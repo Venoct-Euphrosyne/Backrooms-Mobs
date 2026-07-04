@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:nguithr'xurh",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/nguithr'xurh"
+			},
+			"geometry": {
+				"default": "geometry.nguithr'xurh"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"idle": "animation.nguithrxurh.idle",
+				"climb": "animation.nguithrxurh.climb",
+				"walk": "animation.nguithrxurh.walk",
+				"move": "controller.animation.nguithrxurh.move"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 9
+			}
+		}
+	}
+}

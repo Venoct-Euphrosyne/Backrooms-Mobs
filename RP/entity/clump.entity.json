@@ -1,0 +1,54 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:clump",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/clump"
+			},
+			"geometry": {
+				"default": "geometry.clump"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"general",
+					{
+						"first_stage": "query.variant==0"
+					},
+					{
+						"second_stage": "query.variant==1"
+					},
+					{
+						"third_stage": "query.variant==2"
+					},
+					{
+						"fourth_stage": "query.variant==3"
+					}
+				]
+			},
+			"animations": {
+				"idle": "animation.clump.idle",
+				"crawl": "animation.clump.crawl",
+				"first_stage": "animation.clump.first_stage",
+				"second_stage": "animation.clump.second_stage",
+				"third_stage": "animation.clump.third_stage",
+				"fourth_stage": "animation.clump.fourth_stage",
+				"general": "controller.animation.clump.general"
+			},
+			"render_controllers": [
+				"controller.render.clump"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 3
+			}
+		}
+	}
+}

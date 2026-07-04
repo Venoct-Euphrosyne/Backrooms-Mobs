@@ -1,0 +1,650 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.flat_blub_cat.general_default": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"flat_blink",
+						"flat_ear",
+						{
+							"flat_idle": "variable.is_idling"
+						},
+						{
+							"flat_tail": "variable.is_walking"
+						},
+						{
+							"flat_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_baby"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"flat_idle",
+						"flat_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"flat_sleep_0",
+						"flat_sleep_1",
+						"flat_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_baby"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.flat_blub_cat.general_happy": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"flat_happy",
+						{
+							"flat_ear": "variable.is_idling"
+						},
+						{
+							"flat_idle": "variable.is_idling"
+						},
+						{
+							"flat_tail": "variable.is_walking"
+						},
+						{
+							"flat_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"flat_idle",
+						"flat_happy",
+						"flat_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"flat_sleep_0",
+						"flat_sleep_1",
+						"flat_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.flat_blub_cat.general_angry": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"flat_angry",
+						"flat_blink",
+						"flat_ear",
+						{
+							"flat_idle": "variable.is_idling"
+						},
+						{
+							"flat_tail": "variable.is_walking"
+						},
+						{
+							"flat_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"flat_idle",
+						"flat_angry",
+						"flat_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"flat_sleep_0",
+						"flat_sleep_1",
+						"flat_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.long_blub_cat.general_default": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"long_blink",
+						"long_ear",
+						{
+							"long_idle": "variable.is_idling"
+						},
+						{
+							"long_tail": "variable.is_walking"
+						},
+						{
+							"long_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_baby"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"long_idle",
+						"long_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"long_sleep_0",
+						"long_sleep_1",
+						"long_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_baby"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.long_blub_cat.general_happy": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"long_happy",
+						{
+							"long_ear": "variable.is_idling"
+						},
+						{
+							"long_idle": "variable.is_idling"
+						},
+						{
+							"long_tail": "variable.is_walking"
+						},
+						{
+							"long_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"long_idle",
+						"long_happy",
+						"long_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"long_sleep_0",
+						"long_sleep_1",
+						"long_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.long_blub_cat.general_angry": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"long_angry",
+						"long_blink",
+						"long_ear",
+						{
+							"long_idle": "variable.is_idling"
+						},
+						{
+							"long_tail": "variable.is_walking"
+						},
+						{
+							"long_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"long_idle",
+						"long_angry",
+						"long_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"long_sleep_0",
+						"long_sleep_1",
+						"long_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.round_blub_cat.general_default": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"round_blink",
+						"round_ear",
+						{
+							"round_idle": "variable.is_idling"
+						},
+						{
+							"round_tail": "variable.is_walking"
+						},
+						{
+							"round_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_baby"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"round_idle",
+						"round_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"round_sleep_0",
+						"round_sleep_1",
+						"round_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_baby"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.round_blub_cat.general_happy": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"round_happy",
+						{
+							"round_ear": "variable.is_idling"
+						},
+						{
+							"round_idle": "variable.is_idling"
+						},
+						{
+							"round_tail": "variable.is_walking"
+						},
+						{
+							"round_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"round_idle",
+						"round_happy",
+						"round_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"round_sleep_0",
+						"round_sleep_1",
+						"round_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		},
+		"controller.animation.round_blub_cat.general_angry": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"variables": {
+						"is_walking": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						"round_angry",
+						"round_blink",
+						"round_ear",
+						{
+							"round_idle": "variable.is_idling"
+						},
+						{
+							"round_tail": "variable.is_walking"
+						},
+						{
+							"round_walk": "variable.is_walking"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"sleeping": "query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sitting": {
+					"animations": [
+						"round_idle",
+						"round_angry",
+						"round_sleep_0"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"sleeping": {
+					"animations": [
+						"round_sleep_0",
+						"round_sleep_1",
+						"round_tail"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

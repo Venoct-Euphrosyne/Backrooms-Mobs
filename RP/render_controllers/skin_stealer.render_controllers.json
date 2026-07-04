@@ -1,0 +1,59 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.skin_stealer": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.skin_stolen_slim": {
+			"arrays": {
+				"textures": {
+					"Array.variant": [
+						"Texture.slim_0",
+						"Texture.slim_1",
+						"Texture.slim_2",
+						"Texture.slim_3"
+					]
+				}
+			},
+			"geometry": "geometry.slim",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		},
+		"controller.render.skin_stolen_wide": {
+			"arrays": {
+				"textures": {
+					"Array.variant": [
+						"Texture.wide_0",
+						"Texture.wide_1",
+						"Texture.wide_2",
+						"Texture.wide_3",
+						"Texture.wide_4"
+					]
+				}
+			},
+			"geometry": "geometry.wide",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		}
+	}
+}

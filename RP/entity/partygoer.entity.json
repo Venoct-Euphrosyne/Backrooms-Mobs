@@ -1,0 +1,71 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:partygoer",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"white": "textures/entities/partygoer_textures/partygoer_white",
+				"red": "textures/entities/partygoer_textures/partygoer_red",
+				"yellow": "textures/entities/partygoer_textures/partygoer_yellow",
+				"blue": "textures/entities/partygoer_textures/partygoer_blue",
+				"green": "textures/entities/partygoer_textures/partygoer_green"
+			},
+			"geometry": {
+				"default": "geometry.partygoer"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"balloon",
+					{
+						"no_balloon": "!query.is_baby"
+					},
+					{
+						"general": "!query.is_baby && query.mark_variant != 10"
+					},
+					{
+						"general_hold": "query.is_baby && query.mark_variant != 10"
+					},
+					{
+						"general_dance": "!query.is_baby && query.mark_variant == 10"
+					},
+					{
+						"general_dance_hold": "query.is_baby && query.mark_variant == 10"
+					}
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.partygoer.look_at_target",
+				"idle": "animation.partygoer.idle",
+				"idle_no_balloon": "animation.partygoer.idle_no_balloon",
+				"idle_dancing": "animation.partygoer.idle_dancing",
+				"idle_dancing_no_balloon": "animation.partygoer.idle_dancing_no_balloon",
+				"walk": "animation.partygoer.walk",
+				"walk_no_balloon": "animation.partygoer.walk_no_balloon",
+				"chase": "animation.partygoer.chase",
+				"chase_no_balloon": "animation.partygoer.chase_no_balloon",
+				"attack": "animation.partygoer.attack",
+				"attack_no_balloon": "animation.partygoer.attack_no_balloon",
+				"balloon": "animation.partygoer.balloon",
+				"no_balloon": "animation.partygoer.no_balloon",
+				"general": "controller.animation.partygoer.general",
+				"general_hold": "controller.animation.partygoer.general_hold",
+				"general_dance": "controller.animation.partygoer.general_dance",
+				"general_dance_hold": "controller.animation.partygoer.general_dance_hold"
+			},
+			"render_controllers": [
+				"controller.render.partygoer"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 10
+			}
+		}
+	}
+}

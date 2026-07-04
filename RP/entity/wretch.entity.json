@@ -1,0 +1,39 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:wretch",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/wretch"
+			},
+			"geometry": {
+				"default": "geometry.wretch"
+			},
+			"scripts": {
+				"animate": [
+					"move",
+					"attacking"
+				]
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"walk": "animation.wretch.walk",
+				"idle": "animation.wretch.idle",
+				"move": "controller.animation.wretch.move",
+				"attacking": "controller.animation.wretch.attack"
+			},
+			"render_controllers": [
+				"controller.render.wretch"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 17
+			}
+		}
+	}
+}

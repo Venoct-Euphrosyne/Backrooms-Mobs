@@ -1,0 +1,436 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.red_balloon.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						90,
+						56,
+						-32
+					],
+					"position": [
+						9,
+						18,
+						5
+					]
+				},
+				"balloon": {
+					"rotation": [
+						12.0869,
+						3.2114,
+						-14.6598
+					],
+					"position": [
+						0,
+						0,
+						9
+					],
+					"scale": 1.25
+				},
+				"string_1": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_2": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_3": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*-10",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_4": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*-5",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_5": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_6": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_7": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*-10",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_8": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*-5",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_9": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_10": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"rubber": {
+					"rotation": [
+						"-math.sin(query.life_time*-90)*-15",
+						0,
+						"math.sin(query.life_time*-135)*-10"
+					]
+				}
+			}
+		},
+		"animation.red_balloon.first_person_bob": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						25,
+						0,
+						0
+					],
+					"position": [
+						0.5,
+						19,
+						-2.5
+					],
+					"scale": 0.85
+				},
+				"balloon": {
+					"rotation": [
+						35.0001,
+						45.0001,
+						-89.9999
+					],
+					"position": [
+						-5,
+						8,
+						6
+					],
+					"scale": 1.25
+				},
+				"string_1": {
+					"rotation": [
+						9.8246,
+						14.9416,
+						"-1.3378+math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_2": {
+					"rotation": [
+						-10,
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_3": {
+					"rotation": [
+						-10,
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_4": {
+					"rotation": [
+						-10,
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_5": {
+					"rotation": [
+						-10,
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_6": {
+					"rotation": [
+						-10,
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_7": {
+					"rotation": [
+						-10,
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_8": {
+					"rotation": [
+						-10,
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_9": {
+					"rotation": [
+						10,
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_10": {
+					"rotation": [
+						-25,
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"rubber": {
+					"rotation": [
+						15,
+						0,
+						"math.sin(query.life_time*-135)*-10"
+					]
+				}
+			}
+		},
+		"animation.red_balloon.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						25,
+						0,
+						0
+					],
+					"position": [
+						0.5,
+						19,
+						-2.5
+					],
+					"scale": 0.85
+				},
+				"balloon": {
+					"rotation": [
+						45,
+						0,
+						0
+					],
+					"position": [
+						0,
+						3,
+						3
+					],
+					"scale": 1.25
+				},
+				"string_1": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_2": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_3": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-10",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_4": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-5",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_5": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_6": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_7": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-10",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_8": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-5",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_9": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_10": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"rubber": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-15",
+						0,
+						"math.sin(query.life_time*-135)*-10"
+					]
+				}
+			}
+		},
+		"animation.red_balloon.third_person_bob": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						25,
+						0,
+						0
+					],
+					"position": [
+						0.5,
+						19,
+						-2.5
+					],
+					"scale": 0.85
+				},
+				"balloon": {
+					"rotation": [
+						45,
+						0,
+						0
+					],
+					"position": [
+						0,
+						3,
+						3
+					],
+					"scale": 1.25
+				},
+				"string_1": {
+					"rotation": [
+						"-15-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_2": {
+					"rotation": [
+						"-15-math.sin(query.life_time*-90)*5",
+						5,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_3": {
+					"rotation": [
+						"-15-math.sin(query.life_time*-90)*-10",
+						5,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_4": {
+					"rotation": [
+						"-15-math.sin(query.life_time*-90)*-5",
+						5,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_5": {
+					"rotation": [
+						"-15-math.sin(query.life_time*-90)*10",
+						5,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_6": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_7": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-10",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_8": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-5",
+						0,
+						"math.sin(query.life_time*-135)*-5"
+					]
+				},
+				"string_9": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*10",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"string_10": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*5",
+						0,
+						"math.sin(query.life_time*-135)*5"
+					]
+				},
+				"rubber": {
+					"rotation": [
+						"-5-math.sin(query.life_time*-90)*-15",
+						0,
+						"math.sin(query.life_time*-135)*-10"
+					]
+				}
+			}
+		}
+	}
+}

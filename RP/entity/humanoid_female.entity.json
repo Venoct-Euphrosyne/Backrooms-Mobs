@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:humanoid_female",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"white": "textures/entities/humanoid_textures/humanoid_white",
+				"red": "textures/entities/humanoid_textures/humanoid_red",
+				"yellow": "textures/entities/humanoid_textures/humanoid_yellow",
+				"blue": "textures/entities/humanoid_textures/humanoid_blue",
+				"green": "textures/entities/humanoid_textures/humanoid_green",
+				"turquoise": "textures/entities/humanoid_textures/humanoid_turquoise",
+				"orange": "textures/entities/humanoid_textures/humanoid_orange",
+				"gray": "textures/entities/humanoid_textures/humanoid_gray",
+				"static_frame_0": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_0",
+				"static_frame_1": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_1",
+				"static_frame_2": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_2",
+				"static_frame_3": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_3",
+				"static_frame_4": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_4",
+				"static_frame_5": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_5",
+				"static_frame_6": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_6",
+				"static_frame_7": "textures/entities/humanoid_textures/humanoid_static_frames/humanoid_static_frame_7"
+			},
+			"geometry": {
+				"default": "geometry.humanoid_female"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);",
+					"variable.is_non_static = query.variant != 8;",
+					"variable.is_static = query.variant == 8;"
+				],
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"idle": "animation.humanoid_female.idle",
+				"walk": "animation.humanoid_female.walk",
+				"attack": "animation.humanoid_female.attack",
+				"general": "controller.animation.humanoid_female.general"
+			},
+			"render_controllers": [
+				{
+					"controller.render.humanoid_variant": "variable.is_non_static"
+				},
+				{
+					"controller.render.humanoid_static": "variable.is_static"
+				}
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 7
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:smiler",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entities/smiler_textures/smiler"
+			},
+			"geometry": {
+				"default": "geometry.smiler"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"idle_0": "animation.smiler.idle_0",
+				"idle_1": "animation.smiler.idle_1",
+				"attack": "animation.smiler.attack",
+				"idle_no_target_0": "animation.smiler.idle_no_target_0",
+				"idle_no_target_1": "animation.smiler.idle_no_target_1",
+				"general": "controller.animation.smiler.general"
+			},
+			"render_controllers": [
+				"controller.render.smiler"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 13
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:bone_thief",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/bone_thief"
+			},
+			"geometry": {
+				"default": "geometry.bone_thief"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);"
+				],
+				"animate": [
+					"general"
+				]
+			},
+			"animations": {
+				"idle": "animation.bone_thief.idle",
+				"crawl": "animation.bone_thief.crawl",
+				"chomp": "animation.bone_thief.chomp",
+				"general": "controller.animation.bone_thief.general"
+			},
+			"particle_effects": {
+				"bone_thief_tears": "ve:bone_thief_tears"
+			},
+			"render_controllers": [
+				"controller.render.bone_thief"
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 2
+			}
+		}
+	}
+}

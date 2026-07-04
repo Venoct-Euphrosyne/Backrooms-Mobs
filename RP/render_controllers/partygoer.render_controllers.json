@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.partygoer": {
+			"arrays": {
+				"textures": {
+					"Array.variant": [
+						"Texture.white",
+						"Texture.red",
+						"Texture.yellow",
+						"Texture.blue",
+						"Texture.green"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.variant[query.variant]"
+			]
+		}
+	}
+}

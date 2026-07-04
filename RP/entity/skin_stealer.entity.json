@@ -1,0 +1,76 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ve:skin_stealer",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/skin_stealer_textures/skin_stealer",
+				"slim_0": "textures/entities/skin_stealer_textures/skin_stolen_slim_0",
+				"slim_1": "textures/entities/skin_stealer_textures/skin_stolen_slim_1",
+				"slim_2": "textures/entities/skin_stealer_textures/skin_stolen_slim_2",
+				"slim_3": "textures/entities/skin_stealer_textures/skin_stolen_slim_3",
+				"wide_0": "textures/entities/skin_stealer_textures/skin_stolen_wide_0",
+				"wide_1": "textures/entities/skin_stealer_textures/skin_stolen_wide_1",
+				"wide_2": "textures/entities/skin_stealer_textures/skin_stolen_wide_2",
+				"wide_3": "textures/entities/skin_stealer_textures/skin_stolen_wide_3",
+				"wide_4": "textures/entities/skin_stealer_textures/skin_stolen_wide_4"
+			},
+			"geometry": {
+				"default": "geometry.skin_stealer",
+				"slim": "geometry.skin_stolen_slim",
+				"wide": "geometry.skin_stolen_wide"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.random = math.random_integer(0, 1);",
+					"variable.attack = math.sin(variable.attack_time * 45.0);",
+					"variable.is_monster = query.is_sheared;",
+					"variable.is_slim = !query.is_sheared && query.skin_id == 0;",
+					"variable.is_wide = !query.is_sheared && query.skin_id == 1;"
+				],
+				"animate": [
+					{
+						"look_at_target": "!query.is_sheared"
+					},
+					{
+						"scale": "query.is_sheared&&(query.skin_id!=0||query.skin_id!=1)"
+					},
+					{
+						"general": "query.is_sheared&&(query.skin_id!=0||query.skin_id!=1)"
+					},
+					{
+						"general_disguised": "query.skin_id==0||query.skin_id==1"
+					}
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.skin_stealer.look_at_target",
+				"idle": "animation.skin_stealer.idle",
+				"walk": "animation.skin_stealer.walk",
+				"sprint": "animation.skin_stealer.sprint",
+				"walk_disguised": "animation.skin_stolen.walk_disguised",
+				"scale": "animation.skin_stealer.scale",
+				"general": "controller.animation.skin_stealer.general",
+				"general_disguised": "controller.animation.skin_stolen.general"
+			},
+			"render_controllers": [
+				{
+					"controller.render.skin_stealer": "variable.is_monster"
+				},
+				{
+					"controller.render.skin_stolen_slim": "variable.is_slim"
+				},
+				{
+					"controller.render.skin_stolen_wide": "variable.is_wide"
+				}
+			],
+			"spawn_egg": {
+				"texture": "backroom_spawn_eggs",
+				"texture_index": 12
+			}
+		}
+	}
+}
