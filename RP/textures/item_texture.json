@@ -1,0 +1,32 @@
+{
+	"resource_pack_name": "Backrooms Mobs",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"backroom_spawn_eggs": {
+			"textures": [
+				"textures/items/backrooms_spawn_eggs/bacteria_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/blub_cat_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/bone_thief_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/clump_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/deathmoth_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/dunk_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/hound_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/humanoid_female_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/humanoid_male_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/nguithr'xurh_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/partygoer_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/partypooper_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/skin_stealer_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/smiler_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/strider_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/swimmer_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/watcher_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/wretch_spawn_egg",
+				"textures/items/backrooms_spawn_eggs/duller_spawn_egg"
+			]
+		},
+		"red_balloon": {
+			"textures": "textures/items/red_balloon"
+		}
+	}
+}
