@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "humanoid_static_frame_7",
+		"metalness_emissive_roughness": "humanoid_static_frame_7_vv"
+	}
+}
