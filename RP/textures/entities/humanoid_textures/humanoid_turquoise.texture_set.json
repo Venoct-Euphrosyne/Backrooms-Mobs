@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "humanoid_turquoise",
+		"metalness_emissive_roughness": "humanoid_turquoise_emissive_vv"
+	}
+}
